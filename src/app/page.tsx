@@ -2,7 +2,6 @@ import { FC } from 'react';
 import Navbar from '@/components/Navbar';
 import Jumbotron from '@/components/Jumbotron';
 import IntroduceSection from '@/components/IntroduceSection';
-import Container from '@/components/Container';
 import Footer from '@/components/Footer';
 
 const Page: FC = () => {
