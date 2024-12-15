@@ -15,4 +15,18 @@
   body {
     @apply font-pretendard;
   }
+
+  *::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    @apply bg-gray-400/70;
+
+  }
+
+  *::-webkit-scrollbar-track {
+    @apply bg-gray-200;
+  }
 }
