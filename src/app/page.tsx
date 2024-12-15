@@ -2,6 +2,8 @@ import { FC } from 'react';
 import Navbar from '@/components/Navbar';
 import Jumbotron from '@/components/Jumbotron';
 import IntroduceSection from '@/components/IntroduceSection';
+import Container from '@/components/Container';
+import Footer from '@/components/Footer';
 
 const Page: FC = () => {
   return (
@@ -49,6 +51,8 @@ const Page: FC = () => {
       >
         <div className="mt-10 h-96 w-full rounded-lg bg-gray-100">(멋진 사진과 설명 그리고 무언가...)</div>
       </IntroduceSection>
+
+      <Footer />
     </>
   );
 };
