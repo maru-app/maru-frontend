@@ -15,7 +15,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => {
     <html lang="ko">
       <body className="antialiased">
         <Navbar />
-        {children}
+        <section className="pt-[65px]">{children}</section>
         <Footer />
       </body>
     </html>

@@ -4,7 +4,7 @@ import Button from '@/components/Button';
 
 const Jumbotron: FC = () => {
   return (
-    <section className="h-[36rem] bg-gray-100 pt-16">
+    <section className="h-[36rem] bg-gray-100">
       <Container className="flex h-full flex-col justify-center">
         <div>
           <h1 className="text-4xl font-bold">
