@@ -8,7 +8,7 @@ interface PageTitleProps {
 const PageTitle: FC<PageTitleProps> = ({ title, description }) => {
   return (
     <>
-      <h1 className="text-4xl font-bold">{title}</h1>
+      <h1 className="text-3xl font-bold">{title}</h1>
       <p className="text-lg font-bold">{description}</p>
     </>
   );
