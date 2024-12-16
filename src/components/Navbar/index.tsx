@@ -22,13 +22,13 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
           </Link>
           <div className="flex space-x-6">
             <div className="flex space-x-4">
-              <Button variance="text" active={pathname === '/'}>
+              <Button variance="text" active={pathname === '/'} as={Link} href="/">
                 소개
               </Button>
-              <Button variance="text" active={pathname === '/rank'}>
+              <Button variance="text" active={pathname === '/rank'} as={Link} href="/rank">
                 랭킹
               </Button>
-              <Button variance="text" active={pathname === '/privacy'}>
+              <Button variance="text" active={pathname === '/privacy'} as={Link} href="/privacy">
                 개인정보
               </Button>
             </div>
