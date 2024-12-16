@@ -29,4 +29,8 @@
   *::-webkit-scrollbar-track {
     @apply bg-gray-200;
   }
+
+  button, a {
+     @apply transition-all duration-200 ease-in-out;
+  }
 }
