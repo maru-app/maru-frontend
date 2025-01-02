@@ -4,17 +4,21 @@ import type { Metadata } from 'next';
 import { FC, PropsWithChildren } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import { getMyInfoQuery } from '@/api/query/auth-query';
 
 export const metadata: Metadata = {
   title: '마루 | 나만의 일기를 쓰는 공간',
   description: '마루는 나만의 일기를 쓸 수 있는 서비스입니다.'
 };
 
-const RootLayout: FC<PropsWithChildren> = ({ children }) => {
+const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
+  const myInfo = await getMyInfoQuery();
+  const isLogin = myInfo.result?.email !== undefined;
+
   return (
     <html lang="ko">
       <body className="antialiased">
-        <Navbar />
+        <Navbar authorize={isLogin} />
         <section className="pt-[65px]">{children}</section>
         <Footer />
       </body>
