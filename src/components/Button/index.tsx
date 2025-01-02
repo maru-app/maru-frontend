@@ -32,7 +32,7 @@ const Button = <C extends ElementType = 'button'>({
     <Tag
       type="button"
       className={cn(
-        'cursor-pointer rounded-md px-3 py-2 text-black',
+        'block cursor-pointer rounded-md px-3 py-2 text-black',
         active ? activeStyleMap[variance] : styleMap[variance],
         className
       )}
