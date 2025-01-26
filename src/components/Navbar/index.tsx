@@ -33,7 +33,9 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
               <>
                 <div className="my-1 border-r" />
                 <div className="flex space-x-4">
-                  <Button variance="text">내 일기</Button>
+                  <Button variance="text" active={pathname === '/diary'} as={Link} href="/diary">
+                    내 일기
+                  </Button>
                   <Button variance="text">프로필</Button>
                 </div>
               </>
