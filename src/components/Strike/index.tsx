@@ -4,9 +4,9 @@ import Button from '@/components/Button';
 
 const Strike: FC = () => {
   return (
-    <div className="mt-2 w-full rounded-md border-2 border-gray-200 p-4">
+    <div className="mt-2 w-full rounded-md border border-gray-200 p-4">
       <h3 className="mb-3 text-xl font-bold">
-        지금까지 연속 기록을 <span className="text-green-500">1일</span> 유지 중이에요.
+        지금까지 연속 기록을 <span className="text-emerald-500">1일</span> 유지 중이에요.
       </h3>
       <div className="flex items-center justify-between">
         <StrikeGraph />
