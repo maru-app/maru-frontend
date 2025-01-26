@@ -28,9 +28,6 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
               <Button variance="text" active={pathname === '/rank'} as={Link} href="/rank">
                 랭킹
               </Button>
-              <Button variance="text" active={pathname === '/privacy'} as={Link} href="/privacy">
-                개인정보
-              </Button>
             </div>
             {authorize && (
               <>
