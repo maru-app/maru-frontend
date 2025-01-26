@@ -42,7 +42,11 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
             )}
           </div>
         </div>
-        <Button className="bg-emerald-500 text-sm font-bold text-white hover:bg-emerald-600" as={Link} href="/login">
+        <Button
+          className="bg-emerald-500 text-sm font-bold text-white hover:bg-emerald-600"
+          as={Link}
+          href={authorize ? '/write' : '/login'}
+        >
           {authorize ? '일기쓰기' : '로그인'}
         </Button>
       </Container>
