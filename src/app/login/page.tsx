@@ -3,7 +3,6 @@ import Button from '@/components/Button';
 import { API_HOST } from '@/api';
 import NaverIcon from '@/assets/icons/naver.svg';
 import GoogleIcon from '@/assets/icons/google.svg';
-import AppleIcon from '@/assets/icons/apple.svg';
 
 const Page: FC = () => {
   return (
