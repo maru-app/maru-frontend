@@ -3,18 +3,20 @@ import PageTitle from '@/components/Typography/PageTitle';
 import { FC } from 'react';
 import MyDiaryCard from '@/components/MyDiaryCard';
 import Strike from '@/components/Strike';
+import Button from '@/components/Button';
 
 const Page: FC = () => {
   return (
     <Container className="mt-20">
       <PageTitle title="내 일기" description="새로운 일기를 쓰거나 지금까지 쓴 일기를 확인해보세요." />
-      <div className="mt-10">
+      <Button className="mt-3 bg-emerald-500 text-white hover:bg-emerald-600">새 일기 작성하기 (연필 아이콘)</Button>
+      <div className="mt-16">
         <h2 className="text-2xl font-bold">연속 기록</h2>
         <Strike />
       </div>
-      <div className="mt-10">
+      <div className="mt-16">
         <h2 className="text-2xl font-bold">작성한 일기</h2>
-        <div className="grid grid-cols-4 gap-x-4 gap-y-2">
+        <div className="grid grid-cols-3 gap-x-5 gap-y-4">
           <MyDiaryCard title="일기 요약이나 제목 같은 내용이 들어가면 좋습니다." date={new Date()} />
           <MyDiaryCard
             title="대법원은 법률에 저촉되지 아니하는 범위안에서 소송에 관한 절차, 법원의 내부규율과 사무처리에 관한 규칙을 제정할 수 있다."
