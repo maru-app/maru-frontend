@@ -12,7 +12,7 @@ const Page: FC = () => {
       <div className="flex flex-col space-y-2">
         {/* TODO: 실제 소셜로그인 디자인 가이드 라인을 사용할 것. */}
         <Button
-          className="flex min-w-60 items-center border border-gray-300 bg-white text-black hover:bg-gray-100"
+          className="flex min-w-60 items-center border border-gray-300 bg-white text-black hover:bg-gray-200"
           as="a"
           href={`${API_HOST}/oauth/login/naver`}
         >
@@ -20,7 +20,7 @@ const Page: FC = () => {
           <div className="w-full text-center">네이버 로그인</div>
         </Button>
         <Button
-          className="flex min-w-60 items-center border border-gray-300 bg-white text-black hover:bg-gray-100"
+          className="flex min-w-60 items-center border border-gray-300 bg-white text-black hover:bg-gray-200"
           as="a"
           href={`${API_HOST}/oauth/login/google`}
         >
