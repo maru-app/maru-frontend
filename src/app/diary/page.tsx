@@ -9,7 +9,7 @@ const Page: FC = () => {
   return (
     <Container className="mt-20">
       <PageTitle title="내 일기" description="새로운 일기를 쓰거나 지금까지 쓴 일기를 확인해보세요." />
-      <Button className="mt-3 bg-emerald-500 text-white hover:bg-emerald-600">새 일기 작성하기 (연필 아이콘)</Button>
+      <Button className="mt-3 bg-emerald-500 text-white hover:bg-emerald-600">새 일기 쓰기 (연필 아이콘)</Button>
       <div className="mt-16">
         <h2 className="text-2xl font-bold">연속 기록</h2>
         <Strike />
@@ -36,6 +36,9 @@ const Page: FC = () => {
             date={new Date()}
           />
         </div>
+        <Button className="mt-8 w-full bg-gray-100 py-5" variance="text">
+          더보기
+        </Button>
       </div>
     </Container>
   );
