@@ -1,18 +1,44 @@
+'use client';
+
 import { FC } from 'react';
 import Container from '@/components/Container';
 import Button from '@/components/Button';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
+
+const MotionButton = motion(Button);
 
 const Jumbotron: FC = () => {
   return (
-    <section className="h-[36rem] bg-gray-100">
+    <section className="h-[36rem] bg-emerald-400">
       <Container className="flex h-full flex-col justify-center">
         <div>
-          <h1 className="text-4xl font-bold">
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="text-4xl font-bold"
+          >
             나만의 일기을 쓰는 공간,
-            <br />
-            여기는 <span className="font-hahmlet text-emerald-500">마루</span>입니다.
-          </h1>
-          <Button className="mt-6 bg-black text-white hover:bg-black/80">시작하기</Button>
+          </motion.h1>
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.18 }}
+            className="text-4xl font-bold"
+          >
+            여기는 <span className="font-hahmlet text-gray-50">마루</span>입니다.
+          </motion.h1>
+          <MotionButton
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.25 }}
+            className="mt-6 inline-block bg-black text-white hover:bg-stone-900"
+            as={Link}
+            href="/diary"
+          >
+            시작하기
+          </MotionButton>
         </div>
       </Container>
     </section>
