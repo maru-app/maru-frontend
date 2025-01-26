@@ -9,7 +9,7 @@ const Page: FC = () => {
       <PageTitle title="내 일기" description="새로운 일기를 쓰거나 지금까지 쓴 일기를 확인해보세요." />
       <div className="mt-10">
         <h2 className="text-2xl font-bold">연속 기록</h2>
-        <div className="border-gray-3 mt-2 w-full rounded-md border-2 p-4">
+        <div className="mt-2 w-full rounded-md border-2 border-gray-200 p-4">
           <h3 className="mb-3 text-xl font-bold">
             지금까지 연속 기록을 <span className="text-green-500">1일</span> 유지 중이에요.
           </h3>
@@ -26,42 +26,42 @@ const Page: FC = () => {
       <div className="mt-10">
         <h2 className="text-2xl font-bold">작성한 일기</h2>
         <div className="grid grid-cols-4 gap-x-4 gap-y-2">
-          <div className="border-gray-3 group mt-2 cursor-pointer rounded-md border-2 p-4 hover:bg-gray-100">
+          <div className="group mt-2 cursor-pointer rounded-md border-2 border-gray-200 p-4 hover:bg-gray-100">
             <p className="break-keep text-lg font-bold group-hover:underline">
               일기 요약겸 제목이 들어가면 좋을 거 같아요
             </p>
             <p className="text-lg">25년 1월 1일 일기</p>
             <p />
           </div>
-          <div className="border-gray-3 group mt-2 cursor-pointer rounded-md border-2 p-4 hover:bg-gray-100">
+          <div className="group mt-2 cursor-pointer rounded-md border-2 border-gray-200 p-4 hover:bg-gray-100">
             <p className="break-keep text-lg font-bold group-hover:underline">
               일기 요약겸 제목이 들어가면 좋을 거 같아요
             </p>
             <p className="text-lg">25년 1월 1일 일기</p>
             <p />
           </div>
-          <div className="border-gray-3 group mt-2 cursor-pointer rounded-md border-2 p-4 hover:bg-gray-100">
+          <div className="group mt-2 cursor-pointer rounded-md border-2 border-gray-200 p-4 hover:bg-gray-100">
             <p className="break-keep text-lg font-bold group-hover:underline">
               일기 요약겸 제목이 들어가면 좋을 거 같아요
             </p>
             <p className="text-lg">25년 1월 1일 일기</p>
             <p />
           </div>
-          <div className="border-gray-3 group mt-2 cursor-pointer rounded-md border-2 p-4 hover:bg-gray-100">
+          <div className="group mt-2 cursor-pointer rounded-md border-2 border-gray-200 p-4 hover:bg-gray-100">
             <p className="break-keep text-lg font-bold group-hover:underline">
               일기 요약겸 제목이 들어가면 좋을 거 같아요
             </p>
             <p className="text-lg">25년 1월 1일 일기</p>
             <p />
           </div>
-          <div className="border-gray-3 group mt-2 cursor-pointer rounded-md border-2 p-4 hover:bg-gray-100">
+          <div className="group mt-2 cursor-pointer rounded-md border-2 border-gray-200 p-4 hover:bg-gray-100">
             <p className="break-keep text-lg font-bold group-hover:underline">
               일기 요약겸 제목이 들어가면 좋을 거 같아요
             </p>
             <p className="text-lg">25년 1월 1일 일기</p>
             <p />
           </div>
-          <div className="border-gray-3 group mt-2 cursor-pointer rounded-md border-2 p-4 hover:bg-gray-100">
+          <div className="group mt-2 cursor-pointer rounded-md border-2 border-gray-200 p-4 hover:bg-gray-100">
             <p className="break-keep text-lg font-bold group-hover:underline">
               일기 요약겸 제목이 들어가면 좋을 거 같아요
             </p>
