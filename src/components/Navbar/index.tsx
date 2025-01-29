@@ -1,10 +1,11 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 import Container from '@/components/Container';
 import Button from '@/components/Button';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { PAGE_ROUTES } from '@/constants/route';
 
 interface NavbarProps {
   readonly authorize?: boolean;
@@ -12,6 +13,8 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ authorize }) => {
   const pathname = usePathname();
+  const notAuthorizeRoute = useMemo(() => PAGE_ROUTES.filter((route) => !route.isAuthorized), []);
+  const authorizeRoute = useMemo(() => PAGE_ROUTES.filter((route) => route.isAuthorized), []);
 
   return (
     <header className="fixed w-full border-b bg-white/50 py-3 backdrop-blur">
@@ -22,23 +25,27 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
           </Link>
           <div className="flex space-x-6">
             <div className="flex space-x-4">
-              <Button variance="text" active={pathname === '/'} as={Link} href="/">
-                소개
-              </Button>
-              <Button variance="text" active={pathname === '/rank'} as={Link} href="/rank">
-                랭킹
-              </Button>
+              {notAuthorizeRoute.map((route) => (
+                <Button key={route.href} variance="text" active={pathname === route.href} as={Link} href={route.href}>
+                  {route.name}
+                </Button>
+              ))}
             </div>
             {authorize && (
               <>
                 <div className="my-1 border-r" />
                 <div className="flex space-x-4">
-                  <Button variance="text" active={pathname === '/diary'} as={Link} href="/diary">
-                    내 일기
-                  </Button>
-                  <Button variance="text" active={pathname === '/profile'} as={Link} href="/profile">
-                    프로필
-                  </Button>
+                  {authorizeRoute.map((route) => (
+                    <Button
+                      key={route.href}
+                      variance="text"
+                      active={pathname === route.href}
+                      as={Link}
+                      href={route.href}
+                    >
+                      {route.name}
+                    </Button>
+                  ))}
                 </div>
               </>
             )}
