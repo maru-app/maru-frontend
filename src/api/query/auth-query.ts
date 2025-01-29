@@ -2,10 +2,12 @@ import { API_HOST } from '@/api';
 import { getCommonFetchConfig } from '@/api/config';
 import { ApiResponse } from '@/api/type/common.type';
 
+type Vendor = 'GOOGLE' | 'NAVER' | 'APPLE';
+
 interface GetMyInfoQueryReturn {
   email: string;
   nickname: string;
-  vendor: string;
+  vendor: Vendor;
   createdAt: Date;
 }
 
