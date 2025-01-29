@@ -36,7 +36,9 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
                   <Button variance="text" active={pathname === '/diary'} as={Link} href="/diary">
                     내 일기
                   </Button>
-                  <Button variance="text">프로필</Button>
+                  <Button variance="text" active={pathname === '/profile'} as={Link} href="/profile">
+                    프로필
+                  </Button>
                 </div>
               </>
             )}
