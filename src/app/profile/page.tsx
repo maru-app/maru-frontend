@@ -4,6 +4,7 @@ import Container from '@/components/Container';
 import { getMyInfoQuery } from '@/api/query/auth-query';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
+import { VENDOR } from '@/constants/vendor';
 
 const Page: FC = async () => {
   const myInfo = await getMyInfoQuery();
@@ -21,7 +22,11 @@ const Page: FC = async () => {
       <form action={onSubmit}>
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">소셜로그인 연동</p>
-          <Input className="cursor-no-dropoutline-none w-1/2" defaultValue={myInfo.result?.vendor ?? ''} readOnly />
+          <Input
+            className="w-1/2 cursor-no-drop outline-none"
+            defaultValue={VENDOR[myInfo.result?.vendor ?? '']}
+            readOnly
+          />
         </div>
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">닉네임</p>
