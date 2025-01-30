@@ -5,14 +5,21 @@ import MyDiaryCard from '@/components/MyDiaryCard';
 import Strike from '@/components/Strike';
 import Button from '@/components/Button';
 import { PencilIcon } from '@heroicons/react/24/solid';
+import Link from 'next/link';
 
 const Page: FC = () => {
   return (
     <Container className="mt-20">
       <PageTitle title="내 일기" description="새로운 일기를 쓰거나 지금까지 쓴 일기를 확인해보세요." />
-      <Button className="mt-3 flex items-center bg-emerald-500 text-white hover:bg-emerald-600">
-        새 일기 쓰기
-        <PencilIcon className="ml-2 size-4" />
+      <Button
+        className="mt-3 inline-block items-center bg-emerald-500 text-white hover:bg-emerald-600"
+        as={Link}
+        href="/write"
+      >
+        <span className="flex items-center">
+          새 일기 쓰기
+          <PencilIcon className="ml-2 size-4" />
+        </span>
       </Button>
       <div className="mt-16">
         <h2 className="text-2xl font-bold">연속 기록</h2>
