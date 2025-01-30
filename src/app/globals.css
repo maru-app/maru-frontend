@@ -38,4 +38,6 @@
 .ql-editor {
     @apply text-base;
     @apply font-pretendard;
+    @apply min-h-96;
+    @apply h-auto;
 }
