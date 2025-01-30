@@ -5,6 +5,7 @@ import { getMyInfoQuery } from '@/api/query/auth-query';
 import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { VENDOR } from '@/constants/vendor';
+import LogoutButton from '@/components/LogoutButton';
 
 const Page: FC = async () => {
   const myInfo = await getMyInfoQuery();
@@ -45,7 +46,11 @@ const Page: FC = async () => {
             </span>
           </div>
         </div>
-        <div className="mt-10 flex justify-end">
+        <div className="mt-10 flex justify-end space-x-2">
+          <LogoutButton />
+          <Button type="button" className="bg-red-500 px-5 text-white hover:bg-red-600">
+            회원탈퇴
+          </Button>
           <Button type="submit" className="bg-emerald-500 px-5 text-white hover:bg-emerald-600">
             저장
           </Button>
