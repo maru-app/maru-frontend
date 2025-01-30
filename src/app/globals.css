@@ -37,4 +37,5 @@
 
 .ql-editor {
     @apply text-base;
+    @apply font-pretendard;
 }
