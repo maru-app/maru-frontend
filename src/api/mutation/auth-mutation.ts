@@ -12,3 +12,18 @@ export const logoutMutation = async (): Promise<void> => {
   const cookieStore = await cookies();
   cookieStore.delete('_maruToken');
 };
+
+interface RegisterMutationParams {
+  readonly nickname: string;
+  readonly registerToken: string;
+}
+
+export const registerMutation = async ({ nickname, registerToken }: RegisterMutationParams): Promise<void> => {
+  await fetch(`${API_HOST}/auth/register`, {
+    method: 'POST',
+    body: JSON.stringify({ nickname }),
+    ...(await getCommonFetchConfig({
+      'X-Maru-RegisterToken': registerToken
+    }))
+  });
+};
