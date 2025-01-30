@@ -21,7 +21,7 @@ const Page: FC = async () => {
       <PageTitle title="프로필" description="내 정보를 관리해보세요." />
       <form action={onSubmit}>
         <div className="mt-10">
-          <p className="mb-1 text-lg font-bold">소셜로그인 연동</p>
+          <p className="mb-1 text-lg font-bold">연동된 소셜로그인</p>
           <Input
             className="w-1/2 cursor-no-drop outline-none"
             defaultValue={VENDOR[myInfo.result?.vendor ?? '']}
