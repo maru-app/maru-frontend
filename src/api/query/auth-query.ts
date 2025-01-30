@@ -1,3 +1,5 @@
+'use server';
+
 import { API_HOST } from '@/api';
 import { getCommonFetchConfig } from '@/api/config';
 import { ApiResponse } from '@/api/type/common.type';
