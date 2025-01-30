@@ -1,4 +1,4 @@
-import { FC, FormEvent } from 'react';
+import { FC } from 'react';
 import PageTitle from '@/components/Typography/PageTitle';
 import Container from '@/components/Container';
 import { getMyInfoQuery } from '@/api/query/auth-query';
