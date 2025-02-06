@@ -20,7 +20,7 @@ const Page: FC = () => {
       nickname: nickname as string,
       registerToken: token
     });
-    await router.push('/');
+    router.push('/');
   };
 
   return (
