@@ -6,7 +6,7 @@ import Button from '@/components/Button';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 
-const MotionButton = motion(Button);
+const MotionButton = motion.create(Button);
 
 const Jumbotron: FC = () => {
   return (
@@ -16,7 +16,7 @@ const Jumbotron: FC = () => {
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.3, ease: 'easeOut' }}
+            transition={{ duration: 0.35, ease: 'easeOut' }}
             className="text-4xl font-bold"
           >
             나만의 일기을 쓰는 공간,
@@ -24,7 +24,7 @@ const Jumbotron: FC = () => {
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.18 }}
+            transition={{ duration: 0.45, ease: 'easeOut', delay: 0.18 }}
             className="text-4xl font-bold"
           >
             여기는 <span className="font-hahmlet text-gray-50">마루</span>입니다.
