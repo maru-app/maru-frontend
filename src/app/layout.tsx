@@ -5,6 +5,7 @@ import { FC, PropsWithChildren } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { getMyInfoQuery } from '@/api/query/auth-query';
+import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
   title: '마루 | 나만의 일기를 쓰는 공간',
@@ -21,6 +22,7 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
         <Navbar authorize={isLogin} />
         <section className="pt-[65px]">{children}</section>
         <Footer />
+        <Toaster position="top-center" reverseOrder={false} />
       </body>
     </html>
   );
