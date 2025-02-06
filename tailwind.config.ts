@@ -6,7 +6,7 @@ export default {
     extend: {
       fontFamily: {
         hahmlet: ['Hahmlet', 'serif'],
-        pretendard: ['Pretendard Variable', 'sans-serif']
+        pretendard: ['Fluent Emoji Color', 'Pretendard Variable', 'sans-serif']
       }
     }
   },
