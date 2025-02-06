@@ -10,7 +10,6 @@ const Page: FC = () => {
       <h1 className="mb-6 text-3xl font-bold">로그인</h1>
 
       <div className="flex flex-col space-y-2">
-        {/* TODO: 실제 소셜로그인 디자인 가이드 라인을 사용할 것. */}
         <Button
           className="flex min-w-60 items-center border border-gray-300 bg-white text-black hover:bg-gray-200"
           as="a"
