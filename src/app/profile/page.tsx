@@ -48,10 +48,10 @@ const Page: FC = async () => {
         </div>
         <div className="mt-10 flex justify-end space-x-2">
           <LogoutButton />
-          <Button type="button" className="bg-red-500 px-5 text-white hover:bg-red-600">
+          <Button type="button" className="bg-red-500 text-white hover:bg-red-600">
             회원탈퇴
           </Button>
-          <Button type="submit" className="bg-emerald-500 px-5 text-white hover:bg-emerald-600">
+          <Button type="submit" className="bg-emerald-500 text-white hover:bg-emerald-600">
             저장
           </Button>
         </div>

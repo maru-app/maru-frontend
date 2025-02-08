@@ -20,11 +20,11 @@ const Button = <C extends ElementType = 'button'>({
 }: PropsWithChildren<ButtonProps<C>>) => {
   const Tag = as || 'button';
   const styleMap = {
-    primary: '',
+    primary: 'bg-gray-100 hover:bg-gray-200',
     text: 'bg-transparent text-black hover:bg-gray-200'
   };
   const activeStyleMap = {
-    primary: '',
+    primary: 'bg-gray-200',
     text: 'bg-gray-200'
   };
 
@@ -32,7 +32,7 @@ const Button = <C extends ElementType = 'button'>({
     <Tag
       type="button"
       className={cn(
-        'block cursor-pointer rounded-md px-3 py-2 text-black',
+        'block cursor-pointer rounded-md px-3.5 py-2 text-black',
         active ? activeStyleMap[variance] : styleMap[variance],
         className
       )}

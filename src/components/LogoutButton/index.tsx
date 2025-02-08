@@ -10,11 +10,11 @@ const LogoutButton: FC = () => {
 
   const handleLogout = async () => {
     await logoutMutation();
-    await router.push('/');
+    router.push('/');
   };
 
   return (
-    <Button type="button" className="bg-red-500 px-5 text-white hover:bg-red-600" onClick={handleLogout}>
+    <Button type="button" className="bg-red-500 text-white hover:bg-red-600" onClick={handleLogout}>
       로그아웃
     </Button>
   );

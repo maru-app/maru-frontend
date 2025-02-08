@@ -35,9 +35,7 @@ const Page: FC = async () => {
             <MyDiaryCard id={diary.diaryId} title={diary.title} date={new Date(diary.createdAt)} key={diary.diaryId} />
           ))}
         </div>
-        <Button className="mt-8 w-full bg-gray-100 py-5" variance="text">
-          더보기
-        </Button>
+        <Button className="mt-8 w-full py-5">더보기</Button>
       </div>
     </Container>
   );
