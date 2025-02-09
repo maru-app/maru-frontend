@@ -6,6 +6,8 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { VENDOR } from '@/constants/vendor';
 import LogoutButton from '@/components/LogoutButton';
+import Avvvatars from 'avvvatars-react';
+import ProfileImage from '@/components/ProfileImage';
 
 const Page: FC = async () => {
   const myInfo = await getMyInfoQuery();
@@ -21,6 +23,11 @@ const Page: FC = async () => {
     <Container className="mt-20">
       <PageTitle title="프로필" description="내 정보를 관리해보세요." />
       <form action={onSubmit}>
+        <div className="mt-10">
+          <p className="mb-1 text-lg font-bold">프로필 사진</p>
+          <p className="mb-2 text-sm text-gray-400">* 프로필 사진 변경은 추후 제공 예정이에요.</p>
+          <ProfileImage nickname={myInfo.result?.nickname ?? ''} />
+        </div>
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">연동된 소셜로그인</p>
           <Input
