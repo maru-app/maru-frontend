@@ -5,7 +5,7 @@ import PageTitle from '@/components/Typography/PageTitle';
 import Container from '@/components/Container';
 import Input from '@/components/Input';
 import Button from '@/components/Button';
-import { useSearchParams, useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { registerMutation } from '@/api/mutation/auth-mutation';
 
 const Page: FC = () => {
