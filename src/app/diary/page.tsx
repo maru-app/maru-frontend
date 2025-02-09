@@ -31,11 +31,18 @@ const Page: FC = async () => {
       <div className="mt-16">
         <h2 className="text-2xl font-bold">작성한 일기</h2>
         <div className="grid grid-cols-3 gap-x-5 gap-y-4">
-          {diaryList.map((diary) => (
-            <MyDiaryCard id={diary.diaryId} title={diary.title} date={new Date(diary.createdAt)} key={diary.diaryId} />
-          ))}
+          {diaryList.length === 0 && <p className="text-lg">작성된 일기가 없어요. 오늘 일어난 일을 기록해보세요.</p>}
+          {diaryList.length > 0 &&
+            diaryList.map((diary) => (
+              <MyDiaryCard
+                id={diary.diaryId}
+                title={diary.title}
+                date={new Date(diary.createdAt)}
+                key={diary.diaryId}
+              />
+            ))}
         </div>
-        <Button className="mt-8 w-full py-5">더보기</Button>
+        {diaryList.length > 0 && <Button className="mt-8 w-full py-5">더보기</Button>}
       </div>
     </Container>
   );
