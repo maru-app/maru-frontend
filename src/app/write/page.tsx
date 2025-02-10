@@ -53,12 +53,11 @@ const Page: FC = () => {
       <div className="mt-16">
         <div className="mb-4 flex justify-between">
           <Input
-            className="w-1/2"
             placeholder="일기 제목을 입력해주세요."
             value={title}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
           />
-          <Button className="bg-emerald-500 text-white hover:bg-emerald-600" onClick={onSaveClick}>
+          <Button className="hidden bg-emerald-500 text-white hover:bg-emerald-600 lg:block" onClick={onSaveClick}>
             저장하기
           </Button>
         </div>
