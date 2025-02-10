@@ -38,7 +38,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           title={diary.result.title}
           description={`${diaryDate.getFullYear()}년 ${diaryDate.getMonth() + 1}월 ${diaryDate.getDate()}일`}
         />
-        <div>
+        <div className="flex-shrink-0">
           <PageBackwardButton />
         </div>
       </div>
