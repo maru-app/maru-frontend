@@ -14,7 +14,7 @@ const MyDiaryCard: FC<MyDiaryCardProps> = ({ id, title, date }) => {
 
   return (
     <div
-      className="group mt-2 cursor-pointer rounded-md border border-gray-200 p-4 transition-all duration-200 ease-in-out hover:bg-gray-200"
+      className="group cursor-pointer rounded-md border border-gray-200 p-4 transition-all duration-200 ease-in-out hover:bg-gray-200"
       onClick={() => router.push(`/diary/${id}`)}
     >
       <p className="line-clamp-2 break-keep text-lg font-bold group-hover:underline">{title}</p>
