@@ -78,6 +78,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
               active={pathname === route.href}
               as={Link}
               href={route.href}
+              onClick={() => setIsDropdownOpen(false)}
             >
               {route.name}
             </Button>
@@ -91,6 +92,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
                 active={pathname === route.href}
                 as={Link}
                 href={route.href}
+                onClick={() => setIsDropdownOpen(false)}
               >
                 {route.name}
               </Button>
