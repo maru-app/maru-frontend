@@ -11,7 +11,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
 
   if (diary === undefined) {
     return (
-      <Container className="mt-20">
+      <Container className="mt-12 lg:mt-20">
         <PageTitle title="내가 쓴 일기를 불러오는 중..." description="" />
       </Container>
     );
@@ -20,7 +20,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const diaryDate = new Date(diary.createdAt);
 
   return (
-    <Container className="mt-20">
+    <Container className="mt-12 lg:mt-20">
       <div className="flex justify-between">
         <PageTitle
           title={diary.title}

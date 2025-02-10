@@ -24,7 +24,7 @@ const Page: FC = () => {
   };
 
   return (
-    <Container className="mt-20">
+    <Container className="mt-12 lg:mt-20">
       <PageTitle title="이어서 회원가입하기" description="회원가입을 마무리하기 위해 추가정보를 입력해주세요." />
       <form action={onSubmit}>
         <div className="mt-10">

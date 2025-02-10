@@ -48,7 +48,7 @@ const Page: FC = () => {
   };
 
   return (
-    <Container className="mt-20">
+    <Container className="mt-12 lg:mt-20">
       <PageTitle title="일기 쓰기" description="새로운 일기를 쓸 수 있어요." />
       <div className="mt-16">
         <div className="mb-4 flex justify-between">

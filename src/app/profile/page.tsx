@@ -6,7 +6,6 @@ import Button from '@/components/Button';
 import Input from '@/components/Input';
 import { VENDOR } from '@/constants/vendor';
 import LogoutButton from '@/components/LogoutButton';
-import Avvvatars from 'avvvatars-react';
 import ProfileImage from '@/components/ProfileImage';
 
 const Page: FC = async () => {
@@ -20,7 +19,7 @@ const Page: FC = async () => {
   };
 
   return (
-    <Container className="mt-20">
+    <Container className="mt-12 lg:mt-20">
       <PageTitle title="프로필" description="내 정보를 관리해보세요." />
       <form action={onSubmit}>
         <div className="mt-10">
