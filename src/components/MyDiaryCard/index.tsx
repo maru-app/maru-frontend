@@ -16,6 +16,9 @@ const MyDiaryCard: FC<MyDiaryCardProps> = ({ id, title, date }) => {
     <div
       className="group cursor-pointer rounded-md border border-gray-200 p-4 transition-all duration-200 ease-in-out hover:bg-gray-200"
       onClick={() => router.push(`/diary/${id}`)}
+      onKeyDown={(e) => e.key === 'Enter' && router.push(`/diary/${id}`)}
+      role="button"
+      tabIndex={0}
     >
       <p className="line-clamp-2 break-keep text-lg font-bold group-hover:underline">{title}</p>
       <p className="mt-1.5 text-lg">
