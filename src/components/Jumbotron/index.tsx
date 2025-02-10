@@ -17,7 +17,7 @@ const Jumbotron: FC = () => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
-            className="text-4xl font-bold"
+            className="text-3xl font-bold lg:text-4xl"
           >
             나만의 일기을 쓰는 공간,
           </motion.h1>
@@ -25,7 +25,7 @@ const Jumbotron: FC = () => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.45, ease: 'easeOut', delay: 0.18 }}
-            className="text-4xl font-bold"
+            className="text-3xl font-bold lg:text-4xl"
           >
             여기는 <span className="font-hahmlet text-gray-50">마루</span>입니다.
           </motion.h1>

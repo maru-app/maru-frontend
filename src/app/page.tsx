@@ -10,7 +10,7 @@ const Page: FC = () => {
       <IntroduceSection
         className="mt-48"
         titleContent={
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-3xl font-bold lg:text-4xl">
             언제 어디서든, 나만의 <span className="text-emerald-500">일기</span>를
             <br />
             사용해보세요
@@ -24,7 +24,7 @@ const Page: FC = () => {
       <IntroduceSection
         className="mt-48"
         titleContent={
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-3xl font-bold lg:text-4xl">
             이 일기는 <span className="text-emerald-500">나만</span>
             <br />볼 수 있어요
           </h1>
@@ -37,7 +37,7 @@ const Page: FC = () => {
       <IntroduceSection
         className="mt-48"
         titleContent={
-          <h1 className="text-4xl font-bold">
+          <h1 className="text-3xl font-bold lg:text-4xl">
             매일매일 일기 쓰기,
             <br />
             <span className="text-emerald-500">도전</span>해보세요
