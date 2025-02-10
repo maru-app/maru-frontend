@@ -29,15 +29,11 @@ const Page: FC = async () => {
         </div>
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">연동된 소셜로그인</p>
-          <Input
-            className="w-1/2 cursor-no-drop outline-none"
-            defaultValue={VENDOR[myInfo.result?.vendor ?? '']}
-            readOnly
-          />
+          <Input className="cursor-no-drop outline-none" defaultValue={VENDOR[myInfo.result?.vendor ?? '']} readOnly />
         </div>
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">닉네임</p>
-          <Input className="w-1/2" name="nickname" defaultValue={myInfo.result?.nickname ?? ''} />
+          <Input name="nickname" defaultValue={myInfo.result?.nickname ?? ''} />
         </div>
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">연속 기록 공개여부</p>

@@ -29,7 +29,7 @@ const Page: FC = () => {
       <form action={onSubmit}>
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">닉네임</p>
-          <Input className="w-1/2" name="nickname" placeholder="마루에서 사용할 닉네임을 정해주세요." />
+          <Input name="nickname" placeholder="마루에서 사용할 닉네임을 정해주세요." />
         </div>
         <div className="mt-10 flex justify-end">
           <Button type="submit" className="bg-emerald-500 px-5 text-white hover:bg-emerald-600">
