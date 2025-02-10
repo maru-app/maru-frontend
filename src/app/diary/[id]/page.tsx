@@ -21,7 +21,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
 
   return (
     <Container className="mt-12 lg:mt-20">
-      <div className="flex justify-between">
+      <div className="flex items-center justify-between">
         <PageTitle
           title={diary.title}
           description={`${diaryDate.getFullYear()}년 ${diaryDate.getMonth() + 1}월 ${diaryDate.getDate()}일`}
