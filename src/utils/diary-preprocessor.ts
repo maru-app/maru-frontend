@@ -10,7 +10,7 @@ export async function editorPreprocessor(rawContent: string) {
 }
 
 export async function viewerPreprocessor(rawContent: string) {
-  const imageRegex = /\[image\|([^\]]+)\]/g;
+  const imageRegex = /\[image\|([^\]]+)]/g;
   let match;
   while ((match = imageRegex.exec(rawContent)) !== null) {
     const [original, fileName] = match;
