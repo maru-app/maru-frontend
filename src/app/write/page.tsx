@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FC, useState } from 'react';
+import { ChangeEvent, FC, useEffect, useState } from 'react';
 import PageTitle from '@/components/Typography/PageTitle';
 import Container from '@/components/Container';
 import Input from '@/components/Input';
@@ -47,6 +47,18 @@ const Page: FC = () => {
       toast.error('일기 저장을 실패했어요. 나중에 다시 시도해주세요.');
     }
   };
+
+  useEffect(() => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
+      e.preventDefault();
+    };
+
+    window.addEventListener('beforeunload', handleBeforeUnload);
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+    };
+  }, []);
 
   return (
     <Container className="mt-12 lg:mt-20">
