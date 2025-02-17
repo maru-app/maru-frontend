@@ -10,6 +10,7 @@ import toast from 'react-hot-toast';
 import { createDiary } from '@/api/mutation/diary-mutation';
 import { useRouter } from 'next/navigation';
 import { EMOJI_LIST } from '@/constants/emoji';
+import { editorPreprocessor } from '@/utils/diary-preprocessor';
 
 const Page: FC = () => {
   const [title, setTitle] = useState('');
@@ -38,7 +39,7 @@ const Page: FC = () => {
     try {
       await createDiary({
         title,
-        content
+        content: await editorPreprocessor(content)
       });
       toast('새로운 일기를 작성했어요!', { icon: EMOJI_LIST.GREEN_BOOK });
       router.push('/diary');
