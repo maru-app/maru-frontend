@@ -30,7 +30,6 @@ const DeleteDiaryButton: FC<DeleteDiaryButtonProps> = ({ diaryId }) => {
       >
         <TrashIcon className="size-4" />
       </Button>
-      <Tooltip id="tooltip" />
     </>
   );
 };

@@ -42,3 +42,8 @@
     @apply min-h-96;
     @apply h-auto;
 }
+
+.react-tooltip {
+    border-radius: 6px !important;
+    padding: 6px 12px !important;
+}
