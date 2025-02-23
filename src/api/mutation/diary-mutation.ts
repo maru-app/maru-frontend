@@ -15,3 +15,10 @@ export const createDiary = async ({ title, content }: CreateDiaryParams): Promis
     ...(await getCommonFetchConfig())
   });
 };
+
+export const deleteDiary = async (diaryId: number): Promise<void> => {
+  await fetch(`${API_HOST}/diary/${diaryId}`, {
+    method: 'DELETE',
+    ...(await getCommonFetchConfig())
+  });
+};
