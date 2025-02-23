@@ -3,7 +3,6 @@
 import { FC } from 'react';
 import Button from '@/components/Button';
 import { TrashIcon } from '@heroicons/react/24/solid';
-import { Tooltip } from 'react-tooltip';
 import { deleteDiary } from '@/api/mutation/diary-mutation';
 import { useRouter } from 'next/navigation';
 
