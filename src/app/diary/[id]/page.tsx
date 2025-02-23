@@ -6,6 +6,7 @@ import DiaryViewer from '@/components/DiaryViewer';
 import PageBackwardButton from '@/components/PageBackwardButton';
 import { EMOJI_LIST } from '@/constants/emoji';
 import DeleteDiaryButton from '@/components/DeleteDiaryButton';
+import EditDiaryButton from '@/components/EditDiaryButton';
 
 const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const diaryId = (await params).id;
@@ -41,6 +42,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
         />
         <div className="flex flex-shrink-0 space-x-2">
           <PageBackwardButton />
+          <EditDiaryButton diaryId={diary.result.diaryId} />
           <DeleteDiaryButton diaryId={diary.result.diaryId} />
         </div>
       </div>
