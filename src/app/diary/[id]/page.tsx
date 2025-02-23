@@ -5,6 +5,7 @@ import { getDiary } from '@/api/query/diary-query';
 import DiaryViewer from '@/components/DiaryViewer';
 import PageBackwardButton from '@/components/PageBackwardButton';
 import { EMOJI_LIST } from '@/constants/emoji';
+import DeleteDiaryButton from '@/components/DeleteDiaryButton';
 
 const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const diaryId = (await params).id;
@@ -38,8 +39,9 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
           title={diary.result.title}
           description={`${diaryDate.getFullYear()}년 ${diaryDate.getMonth() + 1}월 ${diaryDate.getDate()}일`}
         />
-        <div className="flex-shrink-0">
+        <div className="flex flex-shrink-0 space-x-2">
           <PageBackwardButton />
+          <DeleteDiaryButton diaryId={diary.result.diaryId} />
         </div>
       </div>
       <div className="mt-10">

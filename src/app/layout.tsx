@@ -1,4 +1,5 @@
 import './globals.css';
+import 'react-tooltip/dist/react-tooltip.css';
 
 import type { Metadata } from 'next';
 import { FC, PropsWithChildren } from 'react';
