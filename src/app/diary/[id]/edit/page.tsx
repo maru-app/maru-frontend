@@ -1,6 +1,6 @@
 'use client';
 
-import { ChangeEvent, FC, useEffect, useMemo, useState } from 'react';
+import { ChangeEvent, FC, useEffect, useState } from 'react';
 import PageTitle from '@/components/Typography/PageTitle';
 import Container from '@/components/Container';
 import { getDiary, GetDiaryQueryReturn } from '@/api/query/diary-query';
@@ -56,10 +56,7 @@ const Page: FC = () => {
   }
 
   const diaryDate = new Date(diary.createdAt);
-  const dateFormat = useMemo(
-    () => `${diaryDate.getFullYear()}년 ${diaryDate.getMonth() + 1}월 ${diaryDate.getDate()}일`,
-    [diaryDate]
-  );
+  const dateFormat = `${diaryDate.getFullYear()}년 ${diaryDate.getMonth() + 1}월 ${diaryDate.getDate()}일`;
 
   return (
     <Container className="mt-12 lg:mt-20">
