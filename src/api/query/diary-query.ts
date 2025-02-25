@@ -4,14 +4,13 @@ import { API_HOST } from '@/api';
 import { getCommonFetchConfig } from '@/api/config';
 import { ApiResponse } from '@/api/type/common.type';
 
-interface GetAllDiaryQueryReturn {
+export type GetAllDiaryQueryReturn = Array<{
   readonly diaryId: number;
   readonly title: string;
   readonly createdAt: Date;
   readonly updatedAt: Date;
-}
-
-export const getAllDiary = async (): Promise<ApiResponse<GetAllDiaryQueryReturn[]>> => {
+}>;
+export const getAllDiary = async (): Promise<ApiResponse<GetAllDiaryQueryReturn>> => {
   const data = await fetch(`${API_HOST}/diary`, {
     method: 'GET',
     ...(await getCommonFetchConfig())
@@ -19,7 +18,7 @@ export const getAllDiary = async (): Promise<ApiResponse<GetAllDiaryQueryReturn[
   return data.json();
 };
 
-interface GetDiaryQueryReturn {
+export interface GetDiaryQueryReturn {
   readonly diaryId: number;
   readonly title: string;
   readonly content: string;

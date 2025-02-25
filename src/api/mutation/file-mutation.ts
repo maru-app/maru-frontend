@@ -4,11 +4,10 @@ import { API_HOST } from '@/api';
 import { getCommonFetchConfig } from '@/api/config';
 import { ApiResponse } from '@/api/type/common.type';
 
-interface GeneratePutPresignedUrlReturn {
+export interface GeneratePutPresignedUrlReturn {
   readonly url: string;
   readonly fileName: string;
 }
-
 export const generatePutPresignedUrl = async (
   originalFileName: string
 ): Promise<ApiResponse<GeneratePutPresignedUrlReturn>> => {
@@ -20,11 +19,10 @@ export const generatePutPresignedUrl = async (
   return data.json();
 };
 
-interface GenerateGetPresignedUrlReturn {
+export interface GenerateGetPresignedUrlReturn {
   readonly url: string;
   readonly fileName: string;
 }
-
 export const generateGetPresignedUrl = async (
   fileName: string
 ): Promise<ApiResponse<GenerateGetPresignedUrlReturn>> => {

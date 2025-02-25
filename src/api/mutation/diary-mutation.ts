@@ -3,11 +3,10 @@
 import { API_HOST } from '@/api';
 import { getCommonFetchConfig } from '@/api/config';
 
-interface CreateDiaryParams {
+export interface CreateDiaryParams {
   readonly title: string;
   readonly content: string;
 }
-
 export const createDiary = async ({ title, content }: CreateDiaryParams): Promise<void> => {
   await fetch(`${API_HOST}/diary`, {
     method: 'POST',

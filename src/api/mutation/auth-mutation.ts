@@ -13,11 +13,10 @@ export const logoutMutation = async (): Promise<void> => {
   cookieStore.delete('_maruToken');
 };
 
-interface RegisterMutationParams {
+export interface RegisterMutationParams {
   readonly nickname: string;
   readonly registerToken: string;
 }
-
 export const registerMutation = async ({ nickname, registerToken }: RegisterMutationParams): Promise<void> => {
   await fetch(`${API_HOST}/auth/register`, {
     method: 'POST',
