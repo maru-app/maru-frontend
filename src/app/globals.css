@@ -47,3 +47,45 @@
     border-radius: 6px !important;
     padding: 6px 12px !important;
 }
+
+.swal2-modal {
+    @apply rounded-md;
+    @apply text-black;
+}
+
+.swal2-title {
+    @apply text-left;
+    @apply text-2xl;
+    @apply pt-6 pl-7;
+}
+
+.swal2-html-container {
+    @apply text-left;
+    @apply pt-1 pl-7;
+}
+
+.swal2-confirm {
+    @apply font-normal;
+    @apply outline-none;
+    @apply bg-emerald-500;
+    @apply hover:bg-emerald-600;
+    @apply transition-all duration-200 ease-in-out;
+
+    &:focus-visible {
+        @apply shadow-none;
+        @apply ring-1 ring-stone-900;
+    }
+}
+
+.swal2-cancel {
+    @apply font-normal;
+    @apply bg-gray-100;
+    @apply hover:bg-gray-200;
+    @apply text-black;
+    @apply transition-all duration-200 ease-in-out;
+
+    &:focus-visible {
+        @apply shadow-none;
+        @apply ring-1 ring-stone-900;
+    }
+}
