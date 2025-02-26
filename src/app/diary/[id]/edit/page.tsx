@@ -8,11 +8,14 @@ import { EMOJI_LIST } from '@/constants/emoji';
 import Editor from '@/components/Editor';
 import Input from '@/components/Input';
 import Button from '@/components/Button';
-import { viewerPreprocessor } from '@/utils/diary-preprocessor';
-import { useParams } from 'next/navigation';
+import { editorPreprocessor, viewerPreprocessor } from '@/utils/diary-preprocessor';
+import { useParams, useRouter } from 'next/navigation';
+import toast from 'react-hot-toast';
+import { updateDiary } from '@/api/mutation/diary-mutation';
 
 const Page: FC = () => {
   const params = useParams<{ id: string }>();
+  const router = useRouter();
   const diaryId = Number(params.id);
   const [diary, setDiary] = useState<GetDiaryQueryReturn | null>(null);
   const [diaryError, setDiaryError] = useState<string | null>(null);
@@ -58,6 +61,37 @@ const Page: FC = () => {
   const diaryDate = new Date(diary.createdAt);
   const dateFormat = `${diaryDate.getFullYear()}년 ${diaryDate.getMonth() + 1}월 ${diaryDate.getDate()}일`;
 
+  const validateInput = () => {
+    if (content.trim() === '') {
+      toast('일기 내용이 비어있어요.', { icon: EMOJI_LIST.PENCIL });
+      return false;
+    }
+
+    if (title.trim() === '') {
+      toast('일기 제목이 비어있어요.', { icon: EMOJI_LIST.PENCIL });
+      return false;
+    }
+
+    return true;
+  };
+
+  const onEditClick = async () => {
+    if (!validateInput()) {
+      return;
+    }
+
+    try {
+      await updateDiary(diaryId, {
+        title,
+        content: await editorPreprocessor(content)
+      });
+      toast('일기를 수정했어요!', { icon: EMOJI_LIST.GREEN_BOOK });
+      router.push(`/diary/${diaryId}`);
+    } catch {
+      toast.error('일기 수정을 실패했어요. 나중에 다시 시도해주세요.');
+    }
+  };
+
   return (
     <Container className="mt-12 lg:mt-20">
       <PageTitle title="일기 수정" description={`${dateFormat}에 쓴 일기를 수정하고 있어요.`} />
@@ -68,11 +102,16 @@ const Page: FC = () => {
             value={title}
             onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
           />
-          <Button className="hidden bg-emerald-500 text-white hover:bg-emerald-600 lg:block">수정하기</Button>
+          <Button className="hidden bg-emerald-500 text-white hover:bg-emerald-600 lg:block" onClick={onEditClick}>
+            수정하기
+          </Button>
         </div>
         <Editor value={content} onChange={setContent} />
         <div className="mt-10 flex justify-end">
-          <Button className="bg-emerald-500 text-white hover:bg-emerald-600">수정하기</Button>
+          <Button className="bg-emerald-500 text-white hover:bg-emerald-600" onClick={onEditClick}>
+            {' '}
+            수정하기
+          </Button>
         </div>
       </div>
     </Container>
