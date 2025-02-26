@@ -75,11 +75,16 @@
   @apply bg-emerald-500;
   @apply hover:bg-emerald-600;
   @apply transition-all duration-200 ease-in-out;
+  @apply rounded-md;
 
   &:focus-visible {
     @apply shadow-none;
     @apply ring-1 ring-stone-900;
   }
+}
+
+.swal-danger {
+  @apply bg-red-500 text-white hover:bg-red-600;
 }
 
 .swal2-cancel {
@@ -88,6 +93,7 @@
   @apply hover:bg-gray-200;
   @apply text-black;
   @apply transition-all duration-200 ease-in-out;
+  @apply rounded-md;
 
   &:focus-visible {
     @apply shadow-none;
