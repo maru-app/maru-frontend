@@ -15,6 +15,18 @@ export const createDiary = async ({ title, content }: CreateDiaryParams): Promis
   });
 };
 
+export interface UpdateDiaryParams {
+  readonly title: string;
+  readonly content: string;
+}
+export const updateDiary = async (diaryId: number, { title, content }: UpdateDiaryParams): Promise<void> => {
+  await fetch(`${API_HOST}/diary/${diaryId}`, {
+    method: 'PUT',
+    body: JSON.stringify({ title, content }),
+    ...(await getCommonFetchConfig())
+  });
+};
+
 export const deleteDiary = async (diaryId: number): Promise<void> => {
   await fetch(`${API_HOST}/diary/${diaryId}`, {
     method: 'DELETE',
