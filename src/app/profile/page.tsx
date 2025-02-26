@@ -55,7 +55,11 @@ const Page: FC = () => {
 
         <div className="mt-10">
           <p className="mb-1 text-lg font-bold">연동된 소셜로그인</p>
-          <Input className="cursor-no-drop outline-none" defaultValue={VENDOR[myInfo?.vendor ?? '']} readOnly />
+          <Input
+            className="cursor-no-drop outline-none"
+            defaultValue={myInfo?.vendor && VENDOR[myInfo?.vendor]}
+            readOnly
+          />
         </div>
 
         <div className="mt-10">
