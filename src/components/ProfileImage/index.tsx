@@ -1,7 +1,9 @@
 'use client';
 
 import { FC } from 'react';
-import Avvvatars from 'avvvatars-react';
+import dynamic from 'next/dynamic';
+
+const Avvvatars = dynamic(() => import('avvvatars-react'), { ssr: false });
 
 interface ProfileImageProps {
   readonly nickname: string;
