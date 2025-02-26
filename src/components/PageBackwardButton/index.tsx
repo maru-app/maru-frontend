@@ -9,7 +9,7 @@ const PageBackwardButton: FC = () => {
   const router = useRouter();
 
   return (
-    <Button onClick={() => router.back()} data-tooltip-id="tooltip" data-tooltip-content="뒤로가기">
+    <Button onClick={() => router.push('/diary')} data-tooltip-id="tooltip" data-tooltip-content="뒤로가기">
       <ChevronLeftIcon className="size-5" />
     </Button>
   );
