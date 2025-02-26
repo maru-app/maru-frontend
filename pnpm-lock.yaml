@@ -53,6 +53,9 @@ importers:
       sweetalert2:
         specifier: ^11.17.2
         version: 11.17.2
+      sweetalert2-react-content:
+        specifier: ^5.1.0
+        version: 5.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sweetalert2@11.17.2)
       tailwind-merge:
         specifier: ^2.5.5
         version: 2.5.5
@@ -2670,6 +2673,13 @@ packages:
     resolution: {integrity: sha512-OoohrmuUlBs8B8o6MB2Aevn+pRIH9zDALSR+6hhqVfa6fRwG/Qw9VUMSMW9VNg2CFc/MTIfabtdOVl9ODIJjpw==}
     engines: {node: '>=14.0.0'}
     hasBin: true
+
+  sweetalert2-react-content@5.1.0:
+    resolution: {integrity: sha512-SBh41SdyHDY9NzwrIG6LACbClCMxIlEFP86tGVr/B4zGD4H2gGXB8o7UAJRc/RtBd/iQL9hIvuCAkrk0AgKEMA==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0
+      react-dom: ^18.0.0 || ^19.0.0
+      sweetalert2: ^11.0.0
 
   sweetalert2@11.17.2:
     resolution: {integrity: sha512-HKxDr1IyV3Lxr3W6sb61qm/p2epFIEdr5EKwteRFHnIg6f8nHFl2kX++DBVz16Mac+fFiU3hMpjq1L6yE2Ge5w==}
@@ -5711,6 +5721,12 @@ snapshots:
       css-what: 6.1.0
       csso: 5.0.5
       picocolors: 1.1.1
+
+  sweetalert2-react-content@5.1.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)(sweetalert2@11.17.2):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
+      sweetalert2: 11.17.2
 
   sweetalert2@11.17.2: {}
 
