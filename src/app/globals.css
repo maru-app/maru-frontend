@@ -34,58 +34,63 @@
   a {
     @apply transition-all duration-200 ease-in-out;
   }
+
+  ::selection {
+    @apply bg-slate-400;
+    @apply text-white;
+  }
 }
 
 .ql-editor {
-    @apply text-base;
-    @apply font-pretendard;
-    @apply min-h-96;
-    @apply h-auto;
+  @apply text-base;
+  @apply font-pretendard;
+  @apply min-h-96;
+  @apply h-auto;
 }
 
 .react-tooltip {
-    border-radius: 6px !important;
-    padding: 6px 12px !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
 }
 
 .swal2-modal {
-    @apply rounded-md;
-    @apply text-black;
+  @apply rounded-md;
+  @apply text-black;
 }
 
 .swal2-title {
-    @apply text-left;
-    @apply text-2xl;
-    @apply pt-6 pl-7;
+  @apply text-left;
+  @apply text-2xl;
+  @apply pl-7 pt-6;
 }
 
 .swal2-html-container {
-    @apply text-left;
-    @apply pt-1 pl-7;
+  @apply text-left;
+  @apply pl-7 pt-1;
 }
 
 .swal2-confirm {
-    @apply font-normal;
-    @apply outline-none;
-    @apply bg-emerald-500;
-    @apply hover:bg-emerald-600;
-    @apply transition-all duration-200 ease-in-out;
+  @apply font-normal;
+  @apply outline-none;
+  @apply bg-emerald-500;
+  @apply hover:bg-emerald-600;
+  @apply transition-all duration-200 ease-in-out;
 
-    &:focus-visible {
-        @apply shadow-none;
-        @apply ring-1 ring-stone-900;
-    }
+  &:focus-visible {
+    @apply shadow-none;
+    @apply ring-1 ring-stone-900;
+  }
 }
 
 .swal2-cancel {
-    @apply font-normal;
-    @apply bg-gray-100;
-    @apply hover:bg-gray-200;
-    @apply text-black;
-    @apply transition-all duration-200 ease-in-out;
+  @apply font-normal;
+  @apply bg-gray-100;
+  @apply hover:bg-gray-200;
+  @apply text-black;
+  @apply transition-all duration-200 ease-in-out;
 
-    &:focus-visible {
-        @apply shadow-none;
-        @apply ring-1 ring-stone-900;
-    }
+  &:focus-visible {
+    @apply shadow-none;
+    @apply ring-1 ring-stone-900;
+  }
 }
