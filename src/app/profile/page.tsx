@@ -12,6 +12,7 @@ import ProfileImage from '@/components/ProfileImage';
 import { updateUserMutation } from '@/api/mutation/user-mutation';
 import toast from 'react-hot-toast';
 import { EMOJI_LIST } from '@/constants/emoji';
+import WithdrawButton from '@/components/WithdrawButton';
 
 const Page: FC = () => {
   const [myInfo, setMyInfo] = useState<GetMyInfoQueryReturn | null>(null);
@@ -86,9 +87,7 @@ const Page: FC = () => {
 
         <div className="mt-10 flex justify-end space-x-2">
           <LogoutButton />
-          <Button type="button" className="bg-red-500 text-white hover:bg-red-600">
-            회원탈퇴
-          </Button>
+          <WithdrawButton />
           <Button type="submit" className="bg-emerald-500 text-white hover:bg-emerald-600">
             저장
           </Button>
