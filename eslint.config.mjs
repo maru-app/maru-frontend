@@ -3,6 +3,11 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import react from 'eslint-plugin-react';
+import reactHooks from 'eslint-plugin-react-hooks';
+import next from '@next/eslint-plugin-next';
+import importPlugin from 'eslint-plugin-import';
+import jsxA11y from 'eslint-plugin-jsx-a11y';
 
 /* eslint-disable no-underscore-dangle */
 const __filename = fileURLToPath(import.meta.url);
@@ -16,9 +21,14 @@ const compat = new FlatCompat({
 });
 
 export default [
-  ...compat.extends('next', 'airbnb', 'prettier'),
+  ...compat.extends('airbnb', 'prettier'),
   {
     plugins: {
+      react,
+      reactHooks,
+      next,
+      importPlugin,
+      jsxA11y,
       prettier
     },
     languageOptions: {
