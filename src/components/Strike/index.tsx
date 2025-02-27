@@ -5,7 +5,7 @@ import StrikeGraph from '@/components/StrikeGraph';
 import Button from '@/components/Button';
 
 const Strike: FC = () => {
-  const [year, setYear] = useState<number>(2025);
+  const [year, setYear] = useState<number>(new Date().getFullYear());
 
   return (
     <div className="mt-2 w-full rounded-md border border-gray-200 p-4">
