@@ -16,7 +16,7 @@ const Strike: FC = () => {
         <div className="flex overflow-x-auto">
           <StrikeGraph year={year} />
         </div>
-        <div className="mt-4 flex space-x-2 lg:mt-0 lg:block lg:space-x-0 lg:space-y-2">
+        <div className="ml-4 mt-4 flex flex-shrink-0 space-x-2 lg:mt-0 lg:block lg:space-x-0 lg:space-y-2">
           <Button variance="text" active={year === 2025} onClick={() => setYear(2025)}>
             2025년
           </Button>

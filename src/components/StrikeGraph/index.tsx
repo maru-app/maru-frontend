@@ -1,27 +1,39 @@
 import { FC, useMemo } from 'react';
 import { cn } from '@/utils/cn';
+import { range } from '@/utils/range';
 
 interface StrikeGraphProps {
   readonly year: number;
 }
 
 const DAY_MAP = ['일', '월', '화', '수', '목', '금', '토'];
+const MONTH_MAP = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
 
 const StrikeGraph: FC<StrikeGraphProps> = ({ year }) => {
   const daysSinceYear = useMemo(() => {
     let startOfYear = new Date(year, 0, 1);
-    let today = new Date();
-    if (new Date().getFullYear() !== year) {
-      today = new Date(year, 11, 31);
-    }
+    let today = new Date(year, 11, 31);
     const diffTime = today.getTime() - startOfYear.getTime();
-    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
-    return diffDays;
+    return Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1;
   }, [year]);
+
   const newYearDayIndex = useMemo(() => new Date(year, 0, 1).getDay(), [year]);
 
+  const monthPositions = useMemo(() => {
+    return range(13).map((month) => {
+      const firstDayOfMonth = new Date(year, month, 1);
+      const daysSinceYearStart = Math.floor(
+        (firstDayOfMonth.getTime() - new Date(year, 0, 1).getTime()) / (1000 * 60 * 60 * 24)
+      );
+      return {
+        month: MONTH_MAP[month],
+        position: daysSinceYearStart / 7
+      };
+    });
+  }, [year, newYearDayIndex]);
+
   return (
-    <div className="flex space-x-2">
+    <div className="flex space-x-4">
       <div className="mt-0.5">
         {DAY_MAP.map((day) => (
           <p key={`strike-day-${day}`} className="mt-[-1.8px] text-sm text-gray-500">
@@ -29,19 +41,36 @@ const StrikeGraph: FC<StrikeGraphProps> = ({ year }) => {
           </p>
         ))}
       </div>
-      <div className="flex max-h-32 flex-col flex-wrap">
-        {new Array(newYearDayIndex).fill(0).map((_, idx) => (
-          <span key={`strike-empty-${idx}`} className="ml-0.5 mt-0.5 h-4 w-4 bg-transparent" />
-        ))}
-        {new Array(daysSinceYear).fill(0).map((_, idx) => (
-          <span
-            key={`strike-date-${idx}`}
-            className={cn(
-              'ml-0.5 mt-0.5 h-4 w-4 rounded-md bg-gray-300',
-              Math.random() > 0.5 ? 'bg-emerald-500/70' : 'bg-gray-300/70'
-            )}
-          />
-        ))}
+
+      <div className="flex flex-col">
+        <div className="flex max-h-32 flex-col flex-wrap">
+          {range(newYearDayIndex).map((_, idx) => (
+            <span key={`strike-empty-${idx}`} className="ml-0.5 mt-0.5 h-4 w-4 bg-transparent" />
+          ))}
+          {range(daysSinceYear).map((_, idx) => (
+            <span
+              key={`strike-date-${idx}`}
+              className={cn(
+                'ml-0.5 mt-0.5 h-4 w-4 rounded-md bg-gray-300',
+                Math.random() > 0.5 ? 'bg-emerald-500/70' : 'bg-gray-300/70'
+              )}
+            />
+          ))}
+        </div>
+
+        <div className="relative mt-7 flex">
+          {monthPositions.map((item, idx) => (
+            <div
+              key={`month-${idx}`}
+              className="absolute bottom-0 w-7 text-sm text-gray-500"
+              style={{
+                left: idx === 0 ? 0 : `${item.position * 18}px`
+              }}
+            >
+              {item.month}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );
