@@ -1,10 +1,10 @@
 'use client';
 
 import { FC, useState } from 'react';
-import StrikeGraph from '@/components/StrikeGraph';
+import StreakGraph from '../StreakGraph';
 import Button from '@/components/Button';
 
-const Strike: FC = () => {
+const Streak: FC = () => {
   const [year, setYear] = useState<number>(new Date().getFullYear());
 
   return (
@@ -14,7 +14,7 @@ const Strike: FC = () => {
       </h3>
       <div className="flex flex-col justify-between lg:flex-row">
         <div className="flex overflow-x-auto">
-          <StrikeGraph year={year} />
+          <StreakGraph year={year} />
         </div>
         <div className="ml-4 mt-4 flex flex-shrink-0 space-x-2 lg:mt-0 lg:block lg:space-x-0 lg:space-y-2">
           <Button variance="text" active={year === 2025} onClick={() => setYear(2025)}>
@@ -29,4 +29,4 @@ const Strike: FC = () => {
   );
 };
 
-export default Strike;
+export default Streak;

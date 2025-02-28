@@ -2,7 +2,7 @@ import Container from '@/components/Container';
 import PageTitle from '@/components/Typography/PageTitle';
 import { FC } from 'react';
 import MyDiaryCard from '@/components/MyDiaryCard';
-import Strike from '@/components/Strike';
+import Streak from '../../components/Streak';
 import Button from '@/components/Button';
 import { PencilIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
@@ -26,7 +26,7 @@ const Page: FC = async () => {
       </Button>
       <div className="mt-16">
         <h2 className="text-2xl font-bold">연속 기록</h2>
-        <Strike />
+        <Streak />
       </div>
       <div className="mt-16">
         <h2 className="text-2xl font-bold">작성한 일기</h2>
