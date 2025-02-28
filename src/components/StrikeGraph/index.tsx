@@ -1,4 +1,4 @@
-import { FC, useMemo } from 'react';
+import { FC, useCallback, useMemo } from 'react';
 import { cn } from '@/utils/cn';
 import { range } from '@/utils/range';
 
@@ -32,6 +32,15 @@ const StrikeGraph: FC<StrikeGraphProps> = ({ year }) => {
     });
   }, [year, newYearDayIndex]);
 
+  const getDateByIndex = useCallback(
+    (index: number) => {
+      const date = new Date(year, 0, 1);
+      date.setDate(date.getDate() + index);
+      return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`;
+    },
+    [year]
+  );
+
   return (
     <div className="flex space-x-4">
       <div className="mt-0.5">
@@ -49,6 +58,8 @@ const StrikeGraph: FC<StrikeGraphProps> = ({ year }) => {
           ))}
           {range(daysSinceYear).map((_, idx) => (
             <span
+              data-tooltip-id="tooltip"
+              data-tooltip-content={getDateByIndex(idx)}
               key={`strike-date-${idx}`}
               className={cn(
                 'ml-0.5 mt-0.5 h-4 w-4 rounded-md bg-gray-300',
