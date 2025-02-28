@@ -13,7 +13,7 @@ const Page: FC = async () => {
 
   return (
     <Container className="mt-12 lg:mt-20">
-      <PageTitle title="내 일기" description="새로운 일기를 쓰거나 지금까지 쓴 일기를 확인해보세요." />
+      <PageTitle title="내 일기" description="새로운 일기를 쓰거나 작성한 일기를 확인해보세요." />
       <Button
         className="mt-3 inline-block items-center bg-emerald-500 text-white hover:bg-emerald-600"
         as={Link}
