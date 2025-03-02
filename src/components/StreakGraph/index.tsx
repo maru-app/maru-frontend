@@ -1,7 +1,6 @@
 import { FC, useCallback, useMemo } from 'react';
 import { cn } from '@/utils/cn';
 import { range } from '@/utils/range';
-import { GetAllStreakQueryReturn } from '@/api/query/streak-query';
 
 interface StreakGraphProps {
   readonly year: number;
