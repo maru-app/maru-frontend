@@ -23,7 +23,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
 
   return (
     <>
-      <header className="fixed w-full border-b bg-white/50 backdrop-blur">
+      <header className="fixed z-10 w-full border-b bg-white/50 backdrop-blur">
         <Container className="flex items-center justify-between py-3">
           <div className="flex">
             <Link className="mr-16 select-none font-hahmlet text-2xl font-bold lg:text-[26px]" href="/">
