@@ -5,7 +5,7 @@ import { GetAllStreakQueryReturn } from '@/api/query/streak-query';
 
 interface StreakGraphProps {
   readonly year: number;
-  readonly streaks: GetAllStreakQueryReturn;
+  readonly streaks: Record<string, number>;
 }
 
 const DAY_MAP = ['일', '월', '화', '수', '목', '금', '토'];
@@ -43,14 +43,6 @@ const StreakGraph: FC<StreakGraphProps> = ({ year, streaks }) => {
     [year]
   );
 
-  const streakMap = useMemo(() => {
-    const map = new Map<string, number>();
-    streaks.forEach((streak) => {
-      map.set(streak.date, streak.count);
-    });
-    return map;
-  }, [streaks]);
-
   return (
     <div className="flex space-x-4">
       <div className="mt-0.5">
@@ -68,7 +60,7 @@ const StreakGraph: FC<StreakGraphProps> = ({ year, streaks }) => {
           ))}
           {range(daysSinceYear).map((_, idx) => {
             const date = getDateByIndex(idx);
-            const count = streakMap.get(date) ?? 0;
+            const count = streaks[date] ?? 0;
             return (
               <span
                 data-tooltip-id="tooltip"
