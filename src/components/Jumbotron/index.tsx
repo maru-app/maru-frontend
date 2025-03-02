@@ -10,7 +10,7 @@ const MotionButton = motion.create(Button);
 
 const Jumbotron: FC = () => {
   return (
-    <section className="h-[36rem] bg-emerald-400">
+    <section className="h-[28rem] bg-emerald-400">
       <Container className="flex h-full flex-col justify-center">
         <div>
           <motion.h1
