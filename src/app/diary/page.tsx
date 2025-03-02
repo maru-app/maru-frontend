@@ -30,7 +30,7 @@ const Page: FC = async () => {
       </div>
       <div className="mt-16">
         <h2 className="text-2xl font-bold">작성한 일기</h2>
-        <div className="mt-2 block grid-cols-3 gap-x-5 gap-y-4 space-y-3 lg:grid lg:space-y-0">
+        <div className="mt-2 block grid-cols-3 gap-x-5 gap-y-5 space-y-3 lg:grid lg:space-y-0">
           {diaryList.length === 0 && <p className="text-lg">작성된 일기가 없어요. 오늘 일어난 일을 기록해보세요.</p>}
           {diaryList.length > 0 &&
             diaryList.map((diary) => (
