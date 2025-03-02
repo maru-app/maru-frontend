@@ -4,12 +4,13 @@ import { range } from '@/utils/range';
 
 interface StreakGraphProps {
   readonly year: number;
+  readonly streaks: Record<string, number>;
 }
 
 const DAY_MAP = ['일', '월', '화', '수', '목', '금', '토'];
 const MONTH_MAP = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
 
-const StreakGraph: FC<StreakGraphProps> = ({ year }) => {
+const StreakGraph: FC<StreakGraphProps> = ({ year, streaks }) => {
   const daysSinceYear = useMemo(() => {
     let startOfYear = new Date(year, 0, 1);
     let today = new Date(year, 11, 31);
@@ -56,17 +57,21 @@ const StreakGraph: FC<StreakGraphProps> = ({ year }) => {
           {range(newYearDayIndex).map((_, idx) => (
             <span key={`streak-empty-${idx}`} className="ml-0.5 mt-0.5 h-4 w-4 bg-transparent" />
           ))}
-          {range(daysSinceYear).map((_, idx) => (
-            <span
-              data-tooltip-id="tooltip"
-              data-tooltip-content={getDateByIndex(idx)}
-              key={`streak-date-${idx}`}
-              className={cn(
-                'ml-0.5 mt-0.5 h-4 w-4 rounded-md bg-gray-300',
-                Math.random() > 0.5 ? 'bg-emerald-500/70' : 'bg-gray-300/70'
-              )}
-            />
-          ))}
+          {range(daysSinceYear).map((_, idx) => {
+            const date = getDateByIndex(idx);
+            const count = streaks[date] ?? 0;
+            return (
+              <span
+                data-tooltip-id="tooltip"
+                data-tooltip-content={`${date} : ${count}편`}
+                key={`streak-date-${idx}`}
+                className={cn(
+                  'ml-0.5 mt-0.5 h-4 w-4 rounded-md bg-gray-300',
+                  count >= 1 ? 'bg-emerald-500/70' : 'bg-gray-300/70'
+                )}
+              />
+            );
+          })}
         </div>
 
         <div className="relative mt-7 flex">
