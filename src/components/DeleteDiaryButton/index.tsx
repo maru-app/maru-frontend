@@ -41,12 +41,7 @@ const DeleteDiaryButton: FC<DeleteDiaryButtonProps> = ({ diaryId }) => {
 
   return (
     <>
-      <Button
-        className="bg-red-500 text-white hover:bg-red-600"
-        onClick={handleDelete}
-        data-tooltip-id="tooltip"
-        data-tooltip-content="삭제하기"
-      >
+      <Button onClick={handleDelete} data-tooltip-id="tooltip" data-tooltip-content="삭제하기">
         <TrashIcon className="size-4" />
       </Button>
     </>

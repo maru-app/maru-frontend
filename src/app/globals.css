@@ -100,3 +100,16 @@
     @apply ring-1 ring-stone-900;
   }
 }
+
+.notion {
+    @apply !font-pretendard !text-black;
+
+    ::selection {
+        @apply !bg-slate-400;
+        @apply !text-white;
+    }
+}
+
+.notion-page {
+    @apply !pl-0 !pr-0;
+}

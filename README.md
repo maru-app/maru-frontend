@@ -16,7 +16,9 @@ pnpm dev
 
 ```dotenv
 # Backend API URL
-NEXT_PUBLIC_API_HOST=http://localhost:8080
+NEXT_PUBLIC_API_HOST=
+# Object Storage URL (ex. S3, minio)
+NEXT_PUBLIC_STATIC_BUCKET_HOST=
 ```
 
 ## 백엔드
