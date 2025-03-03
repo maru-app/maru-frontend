@@ -3,6 +3,7 @@ import Button from '@/components/Button';
 import { API_HOST } from '@/api';
 import NaverIcon from '@/assets/icons/naver.svg';
 import GoogleIcon from '@/assets/icons/google.svg';
+import Link from 'next/link';
 
 const Page: FC = () => {
   return (
@@ -38,6 +39,18 @@ const Page: FC = () => {
         {/*  <div className="w-full text-center">Apple 로그인</div> */}
         {/* </Button> */}
       </div>
+
+      <p className="mt-10 text-gray-400">
+        회원가입 및 로그인 시{' '}
+        <Link href="/privacy" className="underline">
+          <b>개인정보처리방침</b>
+        </Link>{' '}
+        및{' '}
+        <Link href="/tos" className="underline">
+          <b>이용약관</b>
+        </Link>{' '}
+        에 동의하는 것으로 간주합니다.
+      </p>
     </div>
   );
 };
