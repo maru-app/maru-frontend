@@ -13,9 +13,18 @@ export interface GetMyInfoQueryReturn {
   createdAt: Date;
 }
 export const getMyInfoQuery = async (): Promise<ApiResponse<GetMyInfoQueryReturn>> => {
-  const data = await fetch(`${API_HOST}/auth/me`, {
-    method: 'GET',
-    ...(await getCommonFetchConfig())
-  });
-  return data.json();
+  try {
+    const data = await fetch(`${API_HOST}/auth/me`, {
+      method: 'GET',
+      ...(await getCommonFetchConfig())
+    });
+    return data.json();
+  } catch (error) {
+    return {
+      result: undefined,
+      error: {
+        code: 'FETCH_ERROR'
+      }
+    };
+  }
 };
