@@ -19,7 +19,7 @@ const Jumbotron: FC = () => {
             transition={{ duration: 0.35, ease: 'easeOut' }}
             className="text-3xl font-bold lg:text-4xl"
           >
-            나만의 일기을 쓰는 공간,
+            나만의 일기를 쓰는 공간,
           </motion.h1>
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
