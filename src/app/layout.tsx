@@ -14,7 +14,26 @@ export const metadata: Metadata = {
     default: '마루 - 나만의 일기를 쓰는 공간'
   },
   description: '마루는 나만의 일기를 쓸 수 있는 서비스입니다.',
-  metadataBase: new URL('https://maruu.space')
+  metadataBase: new URL('https://maruu.space'),
+  openGraph: {
+    url: 'https://maruu.space',
+    title: '마루 - 나만의 일기를 쓰는 공간',
+    description: '마루는 나만의 일기를 쓸 수 있는 서비스입니다.',
+    siteName: '마루',
+    images: [
+      {
+        url: 'https://maruu.space/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: '마루 썸네일'
+      }
+    ],
+    locale: 'ko_KR',
+    type: 'website'
+  },
+  icons: {
+    icon: new URL('/favicon.ico', 'https://maruu.space')
+  }
 };
 
 export const viewport: Viewport = {
