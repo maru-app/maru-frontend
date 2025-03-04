@@ -4,6 +4,11 @@ import { API_HOST } from '@/api';
 import NaverIcon from '@/assets/icons/naver.svg';
 import GoogleIcon from '@/assets/icons/google.svg';
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '로그인'
+};
 
 const Page: FC = () => {
   return (

@@ -9,7 +9,10 @@ import { getMyInfoQuery } from '@/api/query/auth-query';
 import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
-  title: '마루 | 나만의 일기를 쓰는 공간',
+  title: {
+    template: '%s | 마루 - 나만의 일기를 쓰는 공간',
+    default: '마루 - 나만의 일기를 쓰는 공간'
+  },
   description: '마루는 나만의 일기를 쓸 수 있는 서비스입니다.'
 };
 
