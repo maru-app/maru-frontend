@@ -7,6 +7,16 @@ import PageBackwardButton from '@/components/PageBackwardButton';
 import { EMOJI_LIST } from '@/constants/emoji';
 import DeleteDiaryButton from '@/components/DeleteDiaryButton';
 import EditDiaryButton from '@/components/EditDiaryButton';
+import { Metadata } from 'next';
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const diaryId = (await params).id;
+  const diary = await getDiary(Number(diaryId));
+
+  return {
+    title: diary.result?.title ?? '일기'
+  };
+}
 
 const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const diaryId = (await params).id;

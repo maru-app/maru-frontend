@@ -3,6 +3,11 @@ import Container from '@/components/Container';
 import PageTitle from '@/components/Typography/PageTitle';
 import { NotionAPI } from 'notion-client';
 import NotionPageRenderer from '@/components/NotionPageRenderer';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '이용약관'
+};
 
 const notion = new NotionAPI();
 

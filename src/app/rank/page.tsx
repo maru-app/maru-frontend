@@ -1,6 +1,11 @@
 import Container from '@/components/Container';
 import PageTitle from '@/components/Typography/PageTitle';
+import { Metadata } from 'next';
 import { FC } from 'react';
+
+export const metadata: Metadata = {
+  title: '랭킹'
+};
 
 const Page: FC = () => {
   return (

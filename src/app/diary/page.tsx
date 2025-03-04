@@ -6,6 +6,11 @@ import Button from '@/components/Button';
 import { PencilIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
 import DiaryList from '@/components/DiaryList';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: '내 일기'
+};
 
 const Page: FC = async () => {
   return (
