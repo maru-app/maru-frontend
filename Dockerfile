@@ -64,10 +64,8 @@ COPY --from=builder --chown=nextjs:nodejs /app/tailwind.config.ts ./
 COPY --from=builder --chown=nextjs:nodejs /app/postcss.config.mjs ./
 
 # Environment variables must be redefined at run time
-ARG ENV_VARIABLE
-ENV ENV_VARIABLE=${ENV_VARIABLE}
-ARG NEXT_PUBLIC_ENV_VARIABLE
-ENV NEXT_PUBLIC_ENV_VARIABLE=${NEXT_PUBLIC_ENV_VARIABLE}
+ARG NEXT_PUBLIC_API_HOST
+ARG NEXT_PUBLIC_STATIC_BUCKET_HOST
 
 # Uncomment the following line to disable telemetry at run time
 # ENV NEXT_TELEMETRY_DISABLED 1
