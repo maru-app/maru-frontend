@@ -11,6 +11,13 @@ const Footer: FC = () => {
         <div>
           <h1 className="font-hahmlet text-xl font-bold">마루</h1>
           <p className="ml-[1px] text-gray-400">나만의 일기를 쓰는 공간.</p>
+          <p className="ml-[1px] mt-1 text-sm text-gray-400">
+            <span className="font-hahmlet">마루</span>는{' '}
+            <a href="https://daegyeo.me?utm_source=maru" target="_blank" rel="noreferrer" className="underline">
+              daegyeo.me
+            </a>{' '}
+            가 만들어요
+          </p>
         </div>
         <div>
           <div className="flex flex-col space-y-0.5 text-right">
