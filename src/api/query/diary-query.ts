@@ -18,7 +18,7 @@ export type GetAllDiaryQueryReturn = {
     readonly totalPages: number;
   };
 };
-export const getAllDiary = async (size: number): Promise<ApiResponse<GetAllDiaryQueryReturn>> => {
+export const getAllDiaryQuery = async (size: number): Promise<ApiResponse<GetAllDiaryQueryReturn>> => {
   const data = await fetch(`${API_HOST}/diary?page=0&size=${size}`, {
     method: 'GET',
     ...(await getCommonFetchConfig())
@@ -33,7 +33,7 @@ export interface GetDiaryQueryReturn {
   readonly createdAt: Date;
   readonly updatedAt: Date;
 }
-export const getDiary = async (id: number): Promise<ApiResponse<GetDiaryQueryReturn>> => {
+export const getDiaryQuery = async (id: number): Promise<ApiResponse<GetDiaryQueryReturn>> => {
   const data = await fetch(`${API_HOST}/diary/${id}`, {
     method: 'GET',
     ...(await getCommonFetchConfig())

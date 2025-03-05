@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import PageTitle from '@/components/Typography/PageTitle';
 import Container from '@/components/Container';
-import { getDiary } from '@/api/query/diary-query';
+import { getDiaryQuery } from '@/api/query/diary-query';
 import DiaryViewer from '@/components/DiaryViewer';
 import PageBackwardButton from '@/components/PageBackwardButton';
 import { EMOJI_LIST } from '@/constants/emoji';
@@ -11,7 +11,7 @@ import { Metadata } from 'next';
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const diaryId = (await params).id;
-  const diary = await getDiary(Number(diaryId));
+  const diary = await getDiaryQuery(Number(diaryId));
 
   return {
     title: diary.result?.title ?? '일기'
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 
 const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
   const diaryId = (await params).id;
-  const diary = await getDiary(Number(diaryId));
+  const diary = await getDiaryQuery(Number(diaryId));
 
   if (diary.error && (diary.error.code === 'DIARY_NOT_FOUND' || diary.error.code === 'DIARY_IS_NOT_OWNED')) {
     return (

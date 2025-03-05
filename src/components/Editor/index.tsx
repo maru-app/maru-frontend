@@ -5,7 +5,7 @@ import 'react-quill-new/dist/quill.snow.css';
 import { FC, RefObject, useCallback, useMemo, useRef } from 'react';
 import dynamic from 'next/dynamic';
 import ReactQuill from 'react-quill-new';
-import { generateGetPresignedUrl, generatePutPresignedUrl } from '@/api/mutation/file-mutation';
+import { generateGetPresignedUrlMutation, generatePutPresignedUrlMutation } from '@/api/mutation/file-mutation';
 import toast from 'react-hot-toast';
 import ReactQuillProps = ReactQuill.ReactQuillProps;
 
@@ -43,7 +43,7 @@ const Editor: FC<EditorProps> = ({ value, onChange }) => {
         const range = editor.getSelection();
         if (range === null) throw new Error("Range doesn't exist.");
 
-        const presignedUrl = await generatePutPresignedUrl(file.name);
+        const presignedUrl = await generatePutPresignedUrlMutation(file.name);
         if (presignedUrl.result === undefined) throw new Error('Presigned URL Error.');
         const { url, fileName } = presignedUrl.result;
 
@@ -53,7 +53,7 @@ const Editor: FC<EditorProps> = ({ value, onChange }) => {
         });
 
         if (uploadImageToBucket.ok) {
-          const getPresignedUrl = await generateGetPresignedUrl(fileName);
+          const getPresignedUrl = await generateGetPresignedUrlMutation(fileName);
           if (getPresignedUrl.result === undefined) throw new Error('Presigned URL Error.');
 
           editor.insertEmbed(range.index, 'image', getPresignedUrl.result.url);

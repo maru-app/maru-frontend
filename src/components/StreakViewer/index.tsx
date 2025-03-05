@@ -3,7 +3,7 @@
 import { FC, useCallback, useEffect, useMemo, useState } from 'react';
 import StreakGraph from '../StreakGraph';
 import Button from '@/components/Button';
-import { getAllStreak, GetAllStreakQueryReturn } from '@/api/query/streak-query';
+import { getAllStreakQuery, GetAllStreakQueryReturn } from '@/api/query/streak-query';
 import toast from 'react-hot-toast';
 
 const StreakViewer: FC = () => {
@@ -11,7 +11,7 @@ const StreakViewer: FC = () => {
   const [allStreak, setAllStreak] = useState<GetAllStreakQueryReturn>([]);
 
   const fetchData = useCallback(async (year: number) => {
-    const allStreakResponse = await getAllStreak(year);
+    const allStreakResponse = await getAllStreakQuery(year);
 
     if (allStreakResponse.error) {
       toast.error('지금은 연속 기록 그래프를 불러올 수 없어요. 잠시후 다시 시도해주세요.');

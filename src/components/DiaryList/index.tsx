@@ -3,14 +3,14 @@
 import { FC, useEffect, useState } from 'react';
 import MyDiaryCard from '@/components/MyDiaryCard';
 import Button from '@/components/Button';
-import { getAllDiary, GetAllDiaryQueryReturn } from '@/api/query/diary-query';
+import { getAllDiaryQuery, GetAllDiaryQueryReturn } from '@/api/query/diary-query';
 
 export const DiaryList: FC = () => {
   const [diaryData, setDiaryData] = useState<GetAllDiaryQueryReturn | null>(null);
   const [size, setSize] = useState<number>(15);
 
   useEffect(() => {
-    getAllDiary(size).then((data) => setDiaryData(data.result ?? null));
+    getAllDiaryQuery(size).then((data) => setDiaryData(data.result ?? null));
   }, [size]);
 
   const handlePagination = () => {

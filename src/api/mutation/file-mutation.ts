@@ -3,14 +3,15 @@
 import { API_HOST } from '@/api';
 import { getCommonFetchConfig } from '@/api/config';
 import { ApiResponse } from '@/api/type/common.type';
+import { CreateDiaryMutationParams } from '@/api/mutation/diary-mutation';
 
-export interface GeneratePutPresignedUrlReturn {
+export interface GeneratePutPresignedUrlMutationReturn {
   readonly url: string;
   readonly fileName: string;
 }
-export const generatePutPresignedUrl = async (
+export const generatePutPresignedUrlMutation = async (
   originalFileName: string
-): Promise<ApiResponse<GeneratePutPresignedUrlReturn>> => {
+): Promise<ApiResponse<GeneratePutPresignedUrlMutationReturn>> => {
   const data = await fetch(`${API_HOST}/file/upload`, {
     method: 'POST',
     body: JSON.stringify({ originalFileName }),
@@ -19,13 +20,13 @@ export const generatePutPresignedUrl = async (
   return data.json();
 };
 
-export interface GenerateGetPresignedUrlReturn {
+export interface GenerateGetPresignedUrlMutationReturn {
   readonly url: string;
   readonly fileName: string;
 }
-export const generateGetPresignedUrl = async (
+export const generateGetPresignedUrlMutation = async (
   fileName: string
-): Promise<ApiResponse<GenerateGetPresignedUrlReturn>> => {
+): Promise<ApiResponse<GenerateGetPresignedUrlMutationReturn>> => {
   const data = await fetch(`${API_HOST}/file/download`, {
     method: 'POST',
     body: JSON.stringify({ fileName }),
