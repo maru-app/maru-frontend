@@ -34,6 +34,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: new URL('/favicon.ico', 'https://maruu.space')
+  },
+  other: {
+    'google-adsense-account': 'ca-pub-2490453096003621'
   }
 };
 
