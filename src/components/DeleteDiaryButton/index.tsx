@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import Button from '@/components/Button';
 import { TrashIcon } from '@heroicons/react/24/solid';
-import { deleteDiary } from '@/api/mutation/diary-mutation';
+import { deleteDiaryMutation } from '@/api/mutation/diary-mutation';
 import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
 import toast from 'react-hot-toast';
@@ -31,7 +31,7 @@ const DeleteDiaryButton: FC<DeleteDiaryButtonProps> = ({ diaryId }) => {
       }
     }).then((confirm) => {
       if (confirm.isConfirmed) {
-        deleteDiary(diaryId).then(() => {
+        deleteDiaryMutation(diaryId).then(() => {
           router.push('/diary');
           toast('일기를 삭제했어요.', { icon: EMOJI_LIST.TRASH });
         });

@@ -1,6 +1,6 @@
 'use server';
 
-import { generateGetPresignedUrl } from '@/api/mutation/file-mutation';
+import { generateGetPresignedUrlMutation } from '@/api/mutation/file-mutation';
 
 export async function editorPreprocessor(rawContent: string) {
   const bucketHost = process.env.NEXT_PUBLIC_STATIC_BUCKET_HOST ?? '';
@@ -14,7 +14,7 @@ export async function viewerPreprocessor(rawContent: string) {
   let match;
   while ((match = imageRegex.exec(rawContent)) !== null) {
     const [original, fileName] = match;
-    const { result: presignedUrl } = await generateGetPresignedUrl(fileName);
+    const { result: presignedUrl } = await generateGetPresignedUrlMutation(fileName);
     if (presignedUrl !== undefined) {
       rawContent = rawContent.replace(original, `<img src="${presignedUrl.url}" alt="image" />`);
     }

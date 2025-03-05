@@ -7,7 +7,7 @@ import Input from '@/components/Input';
 import Button from '@/components/Button';
 import Editor from '@/components/Editor';
 import toast from 'react-hot-toast';
-import { createDiary } from '@/api/mutation/diary-mutation';
+import { createDiaryMutation } from '@/api/mutation/diary-mutation';
 import { useRouter } from 'next/navigation';
 import { EMOJI_LIST } from '@/constants/emoji';
 import { editorPreprocessor } from '@/utils/diary-preprocessor';
@@ -37,7 +37,7 @@ const Page: FC = () => {
     }
 
     try {
-      await createDiary({
+      await createDiaryMutation({
         title,
         content: await editorPreprocessor(content)
       });

@@ -3,11 +3,11 @@
 import { API_HOST } from '@/api';
 import { getCommonFetchConfig } from '@/api/config';
 
-export interface CreateDiaryParams {
+export interface CreateDiaryMutationParams {
   readonly title: string;
   readonly content: string;
 }
-export const createDiary = async ({ title, content }: CreateDiaryParams): Promise<void> => {
+export const createDiaryMutation = async ({ title, content }: CreateDiaryMutationParams): Promise<void> => {
   await fetch(`${API_HOST}/diary`, {
     method: 'POST',
     body: JSON.stringify({ title, content }),
@@ -15,11 +15,14 @@ export const createDiary = async ({ title, content }: CreateDiaryParams): Promis
   });
 };
 
-export interface UpdateDiaryParams {
+export interface UpdateDiaryMutationParams {
   readonly title: string;
   readonly content: string;
 }
-export const updateDiary = async (diaryId: number, { title, content }: UpdateDiaryParams): Promise<void> => {
+export const updateDiaryMutation = async (
+  diaryId: number,
+  { title, content }: UpdateDiaryMutationParams
+): Promise<void> => {
   await fetch(`${API_HOST}/diary/${diaryId}`, {
     method: 'PUT',
     body: JSON.stringify({ title, content }),
@@ -27,7 +30,7 @@ export const updateDiary = async (diaryId: number, { title, content }: UpdateDia
   });
 };
 
-export const deleteDiary = async (diaryId: number): Promise<void> => {
+export const deleteDiaryMutation = async (diaryId: number): Promise<void> => {
   await fetch(`${API_HOST}/diary/${diaryId}`, {
     method: 'DELETE',
     ...(await getCommonFetchConfig())

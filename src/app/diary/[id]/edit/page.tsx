@@ -3,7 +3,7 @@
 import { ChangeEvent, FC, useEffect, useState } from 'react';
 import PageTitle from '@/components/Typography/PageTitle';
 import Container from '@/components/Container';
-import { getDiary, GetDiaryQueryReturn } from '@/api/query/diary-query';
+import { getDiaryQuery, GetDiaryQueryReturn } from '@/api/query/diary-query';
 import { EMOJI_LIST } from '@/constants/emoji';
 import Editor from '@/components/Editor';
 import Input from '@/components/Input';
@@ -11,7 +11,7 @@ import Button from '@/components/Button';
 import { editorPreprocessor, viewerPreprocessor } from '@/utils/diary-preprocessor';
 import { useParams, useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
-import { updateDiary } from '@/api/mutation/diary-mutation';
+import { updateDiaryMutation } from '@/api/mutation/diary-mutation';
 
 const Page: FC = () => {
   const params = useParams<{ id: string }>();
@@ -23,7 +23,7 @@ const Page: FC = () => {
   const [content, setContent] = useState('');
 
   useEffect(() => {
-    getDiary(diaryId).then((data) => {
+    getDiaryQuery(diaryId).then((data) => {
       if (data.error) {
         setDiaryError(data.error.code);
         return;
@@ -81,7 +81,7 @@ const Page: FC = () => {
     }
 
     try {
-      await updateDiary(diaryId, {
+      await updateDiaryMutation(diaryId, {
         title,
         content: await editorPreprocessor(content)
       });
