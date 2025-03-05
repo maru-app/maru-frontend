@@ -64,6 +64,11 @@ const Page: FC = () => {
         </div>
 
         <div className="mt-10">
+          <p className="mb-1 text-lg font-bold">연동된 이메일</p>
+          <Input className="cursor-no-drop outline-none" defaultValue={myInfo?.email ?? ''} readOnly />
+        </div>
+
+        <div className="mt-10">
           <p className="mb-1 text-lg font-bold">닉네임</p>
           <Input name="nickname" defaultValue={myInfo?.nickname ?? ''} />
         </div>
