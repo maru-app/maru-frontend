@@ -7,6 +7,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { getMyInfoQuery } from '@/api/query/auth-query';
 import { Toaster } from 'react-hot-toast';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +53,7 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
         <Footer />
         <Toaster position="top-center" reverseOrder={false} />
       </body>
+      <GoogleAnalytics gaId="G-H5T4L44K0V" />
     </html>
   );
 };
