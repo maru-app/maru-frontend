@@ -45,7 +45,7 @@ const Page: FC = () => {
         {/* </Button> */}
       </div>
 
-      <p className="mt-10 text-gray-400">
+      <p className="mx-4 mt-10 break-keep text-center text-gray-400 lg:mx-0">
         회원가입 및 로그인 시{' '}
         <Link href="/privacy" className="underline">
           <b>개인정보처리방침</b>
@@ -53,7 +53,7 @@ const Page: FC = () => {
         및{' '}
         <Link href="/tos" className="underline">
           <b>이용약관</b>
-        </Link>{' '}
+        </Link>
         에 동의하는 것으로 간주합니다.
       </p>
     </div>
