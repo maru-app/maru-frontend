@@ -7,7 +7,7 @@ import Link from 'next/link';
 const Footer: FC = () => {
   return (
     <footer className="mt-48 h-72 border-t">
-      <Container className="flex h-full items-center justify-between">
+      <Container className="flex h-full flex-col justify-center space-y-8 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
         <div>
           <h1 className="font-hahmlet text-xl font-bold">마루</h1>
           <p className="ml-[1px] text-gray-400">나만의 일기를 쓰는 공간.</p>
@@ -20,7 +20,7 @@ const Footer: FC = () => {
           </p>
         </div>
         <div>
-          <div className="flex flex-col space-y-0.5 text-right">
+          <div className="flex flex-col space-y-0.5 lg:text-right">
             <Link href="/tos" className="text-gray-400 hover:text-gray-500">
               이용약관
             </Link>
@@ -28,7 +28,7 @@ const Footer: FC = () => {
               개인정보 처리방침
             </Link>
           </div>
-          <div className="mt-4 flex justify-end">
+          <div className="mt-4 flex lg:justify-end">
             <a
               href="https://github.com/SkyLightQP/maru-frontend"
               target="_blank"
