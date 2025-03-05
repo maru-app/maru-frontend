@@ -21,8 +21,6 @@ const WithdrawButton: FC = () => {
           - 모든 일기 내용과 첨부된 사진이 삭제돼요.
           <br />
           - 쌓아온 연속 기록도 함께 삭제돼요.
-          <br />
-          - 탈퇴 후에는 동일한 이메일로 가입할 수 없어요.
           <br />- 탈퇴 후에는 철회할 수 없으며 데이터를 복구할 수 없어요.
           <p className="mt-6 text-center">계정 탈퇴를 진행하려면 "탈퇴합니다."를 똑같이 써주세요.</p>
           <div className="mt-2 flex justify-center">
