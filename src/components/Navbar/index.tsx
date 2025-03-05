@@ -99,6 +99,15 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
                   {route.name}
                 </Button>
               ))}
+            <Button
+              className="w-full text-left"
+              variance="text"
+              as={Link}
+              href={authorize ? '/write' : '/login'}
+              onClick={() => setIsDropdownOpen(false)}
+            >
+              {authorize ? '일기쓰기' : '로그인'}
+            </Button>
           </div>
         </section>
       </header>
