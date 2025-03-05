@@ -36,7 +36,7 @@ const Page: FC = () => {
     const streak = formData.get('streak');
 
     await updateUserMutation({
-      nickname: String(nickname) ?? myInfo?.nickname
+      nickname: String(nickname).trim() ?? myInfo?.nickname.trim()
     });
 
     toast('내 정보를 변경했어요.', { icon: EMOJI_LIST.PENCIL });
