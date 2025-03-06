@@ -16,16 +16,21 @@ const Streak: FC = async () => {
 
   return (
     <div className="mt-2 w-full rounded-md border border-gray-200 p-4">
-      <h3 className="mb-3 text-xl font-bold">
+      <h3 className="mb-4 text-xl font-bold">
         {streak === 0 ? (
           <>
-            오늘은 아직 일기를 쓰지 않았어요. 최고 연속 기록은 <span className="text-emerald-500">{bestStreak}일</span>
-            이에요.
+            오늘은 아직 일기를 쓰지 않았어요. <br />
+            <span className="text-lg">
+              최장 연속 기록은 <span className="text-emerald-500">{bestStreak}일</span>이에요.
+            </span>
           </>
         ) : (
           <>
-            지금까지 연속 기록을 <span className="text-emerald-500">{streak}일</span> 유지 중이에요. 최장 연속 기록은{' '}
-            <span className="text-emerald-500">{bestStreak}일</span>이에요.
+            지금까지 연속 기록을 <span className="text-emerald-500">{streak}일</span> 유지 중이에요.{' '}
+            <span aria-label="불 이모지">🔥</span> <br />
+            <span className="text-lg">
+              최장 연속 기록은 <span className="text-emerald-500">{bestStreak}일</span>이에요.
+            </span>
           </>
         )}
       </h3>
