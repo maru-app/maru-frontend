@@ -18,5 +18,16 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  return NextResponse.next();
+  const headers = new Headers(request.headers);
+  const forwardedFor = request.headers.get('X-Forwarded-For');
+  const clientIp = forwardedFor ? forwardedFor.split(',')[0].trim() : request.headers.get('X-Real-IP') || null;
+  if (clientIp) {
+    headers.set('X-Forwarded-For', clientIp);
+  }
+
+  return NextResponse.next({
+    request: {
+      headers
+    }
+  });
 }
