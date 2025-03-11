@@ -53,7 +53,7 @@ const StreakGraph: FC<StreakGraphProps> = ({ year, streaks }) => {
       </div>
 
       <div className="flex flex-col">
-        <div className="flex max-h-32 flex-col flex-wrap">
+        <div className="flex max-h-32 flex-1 flex-col flex-wrap">
           {range(newYearDayIndex).map((_, idx) => (
             <span key={`streak-empty-${idx}`} className="ml-0.5 mt-0.5 h-4 w-4 bg-transparent" />
           ))}
