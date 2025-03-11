@@ -41,7 +41,7 @@ const StreakViewer: FC = () => {
 
   return (
     <div className="flex flex-col justify-between lg:flex-row">
-      <div className="flex overflow-x-auto">
+      <div className="flex flex-1 overflow-x-auto">
         <StreakGraph year={year} streaks={streakMap} />
       </div>
       <div className="ml-4 mt-4 flex flex-shrink-0 space-x-2 lg:mt-0 lg:block lg:space-x-0 lg:space-y-2">
