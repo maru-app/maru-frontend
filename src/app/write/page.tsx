@@ -23,11 +23,6 @@ const Page: FC = () => {
       return false;
     }
 
-    if (title.trim() === '') {
-      toast('일기 제목이 비어있어요.', { icon: EMOJI_LIST.PENCIL });
-      return false;
-    }
-
     return true;
   };
 
@@ -37,8 +32,14 @@ const Page: FC = () => {
     }
 
     try {
+      const defaultTitle = `${new Date().getMonth() + 1}월 ${new Date().getDate()}일 일기`;
+      if (title.trim() === '') {
+        setTitle(defaultTitle);
+        toast('일기 제목이 비어있어 오늘 날짜로 채웠어요.', { icon: EMOJI_LIST.PENCIL });
+      }
+
       await createDiaryMutation({
-        title,
+        title: title.trim() === '' ? defaultTitle : title,
         content: await editorPreprocessor(content)
       });
       toast('새로운 일기를 작성했어요!', { icon: EMOJI_LIST.GREEN_BOOK });

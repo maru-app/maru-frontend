@@ -4,7 +4,7 @@ export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: '*',
-      allow: ['ads.txt', '/diary$', '/'],
+      allow: ['/diary$', '/'],
       disallow: ['/diary/', '/register']
     },
     sitemap: 'https://maruu.space/sitemap.xml'
