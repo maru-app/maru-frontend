@@ -49,8 +49,8 @@ const Page: FC = () => {
       <PageTitle title="프로필" description="내 정보를 관리해보세요." />
       <form action={onSubmit}>
         <div className="mt-10">
-          <p className="mb-1 text-lg font-bold">프로필 사진</p>
-          <p className="mb-2 text-sm text-gray-400">* 프로필 사진 변경은 추후 제공 예정이에요.</p>
+          <p className="text-lg font-bold">프로필 사진</p>
+          <p className="mb-2 text-sm text-gray-400">프로필 사진 변경은 추후 제공 예정이에요.</p>
           <ProfileImage nickname={myInfo?.nickname ?? ''} />
         </div>
 
@@ -64,7 +64,8 @@ const Page: FC = () => {
         </div>
 
         <div className="mt-10">
-          <p className="mb-1 text-lg font-bold">연동된 이메일</p>
+          <p className="text-lg font-bold">연동된 이메일</p>
+          <p className="mb-2 text-sm text-gray-400">연동된 이메일은 변경할 수 없어요.</p>
           <Input className="cursor-no-drop outline-none" defaultValue={myInfo?.email ?? ''} readOnly />
         </div>
 
@@ -74,10 +75,8 @@ const Page: FC = () => {
         </div>
 
         <div className="mt-10">
-          <p className="mb-1 text-lg font-bold">연속 기록 공개여부</p>
-          <p className="mb-2 text-sm text-gray-400">
-            * 연속 기록 랭킹은 추후 제공 예정이에요. 기본값은 비공개로 설정돼요.
-          </p>
+          <p className="text-lg font-bold">연속 기록 공개여부</p>
+          <p className="mb-2 text-sm text-gray-400">연속 기록 랭킹은 추후 제공 예정이에요. 기본값은 비공개이에요.</p>
           <div className="flex space-x-4">
             <span className="space-x-2">
               <input type="radio" name="streak" id="public" value="public" disabled />
