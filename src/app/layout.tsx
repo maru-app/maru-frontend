@@ -9,6 +9,7 @@ import { getMyInfoQuery } from '@/api/query/auth-query';
 import { Toaster } from 'react-hot-toast';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Adsense from '@/components/Adsense';
+import NextTopLoader from 'nextjs-toploader';
 
 export const metadata: Metadata = {
   title: {
@@ -52,6 +53,7 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
   return (
     <html lang="ko">
       <body className="antialiased">
+        <NextTopLoader color="#10B981" height={2} />
         <Navbar authorize={isLogin} />
         <section className="pt-[65px]">{children}</section>
         <Footer />
