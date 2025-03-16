@@ -20,10 +20,14 @@ export const createApiFetchError = (): ApiFail => {
   };
 };
 
-export const interceptResponse = async <T>(response: Response): Promise<ApiResponse<T>> => {
+export const interceptResponse = async <T>(
+  response: Response,
+  callback?: (data: T) => Promise<void>
+): Promise<ApiResponse<T>> => {
   const data = await response.json();
   if (!response.ok) {
     return { error: { code: data.error.code } };
   }
+  if (callback) await callback(data);
   return data;
 };
