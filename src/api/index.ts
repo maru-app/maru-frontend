@@ -19,3 +19,11 @@ export const createApiFetchError = (): ApiFail => {
     }
   };
 };
+
+export const interceptResponse = async <T>(response: Response): Promise<ApiResponse<T>> => {
+  const data = await response.json();
+  if (!response.ok) {
+    return { error: { code: data.error.code } };
+  }
+  return data;
+};
