@@ -5,11 +5,11 @@ import type { Metadata, Viewport } from 'next';
 import { FC, PropsWithChildren } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { getMyInfoQuery } from '@/api/query/auth-query';
 import { Toaster } from 'react-hot-toast';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import Adsense from '@/components/Adsense';
 import NextTopLoader from 'nextjs-toploader';
+import { headers } from 'next/headers';
 
 export const metadata: Metadata = {
   title: {
@@ -47,14 +47,14 @@ export const viewport: Viewport = {
 };
 
 const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
-  const myInfo = await getMyInfoQuery();
-  const isLogin = myInfo.result?.email !== undefined;
+  const headersList = await headers();
+  const isAuthorize = headersList.get('x-maru-authorize') === 'true';
 
   return (
     <html lang="ko">
       <body className="antialiased">
         <NextTopLoader color="#10B981" height={2} />
-        <Navbar authorize={isLogin} />
+        <Navbar authorize={isAuthorize} />
         <section className="pt-[65px]">{children}</section>
         <Footer />
         <Toaster position="top-center" reverseOrder={false} />
