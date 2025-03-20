@@ -57,7 +57,13 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
         <Navbar authorize={isAuthorize} />
         <section className="pt-[65px]">{children}</section>
         <Footer />
-        <Toaster position="top-center" reverseOrder={false} />
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+          containerStyle={{
+            top: 32
+          }}
+        />
       </body>
       <Adsense />
       <GoogleAnalytics gaId="G-H5T4L44K0V" />
