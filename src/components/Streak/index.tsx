@@ -25,8 +25,9 @@ const Streak: FC = async () => {
           </>
         ) : (
           <>
-            지금까지 연속 기록을 <span className="text-emerald-500">{streak}일</span> 유지 중이에요.{' '}
-            <span aria-label="불 이모지">🔥</span> <br />
+            <span aria-label="불 이모지">🔥</span> 연속 기록을 <span className="text-emerald-500">{streak}일</span> 유지
+            중이에요.
+            <br />
             <span className="text-lg">
               최장 연속 기록은 <span className="text-emerald-500">{bestStreak}일</span>이에요.
             </span>
