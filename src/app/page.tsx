@@ -10,32 +10,32 @@ const Page: FC = () => {
       <Container>
         <div className="mt-44 flex flex-col justify-around space-y-6 lg:flex-row lg:space-y-0">
           <div>
-            <h1 className="text-3xl font-bold">
+            <h3 className="text-3xl font-bold">
               이 일기는 <span className="text-emerald-500">나만</span>
               <br />볼 수 있어요
-            </h1>
-            <p className="mt-4 text-lg">브라우저만 있다면 어디서든, 일기를 쓸 수 있어요.</p>
-          </div>
-
-          <div className="border-0 border-r border-gray-200"></div>
-
-          <div>
-            <h1 className="text-3xl font-bold">
-              언제 어디서든, 나만의 <span className="text-emerald-500">일기</span>를
-              <br />
-              사용해보세요
-            </h1>
+            </h3>
             <p className="mt-4 text-lg">작성된 일기는 암호화되어 오직 나만 볼 수 있어요.</p>
           </div>
 
           <div className="border-0 border-r border-gray-200"></div>
 
           <div>
-            <h1 className="text-3xl font-bold">
-              매일매일 일기 쓰기,
+            <h3 className="text-3xl font-bold">
+              <span className="text-emerald-500">언제 어디서든</span>, 나만의 일기를
+              <br />
+              사용해보세요
+            </h3>
+            <p className="mt-4 text-lg">브라우저만 있다면 어디서든, 일기를 쓸 수 있어요.</p>
+          </div>
+
+          <div className="border-0 border-r border-gray-200"></div>
+
+          <div>
+            <h3 className="text-3xl font-bold">
+              <span className="text-emerald-500">매일매일</span> 일기 쓰기,
               <br />
               <span className="text-emerald-500">도전</span>해보세요
-            </h1>
+            </h3>
             <p className="mt-4 text-lg">매일 일기를 쓰고 연속 기록을 유지해보세요.</p>
           </div>
         </div>

@@ -2,11 +2,10 @@ import { FC } from 'react';
 import { getStreakQuery } from '@/api/query/streak-query';
 import StreakViewer from '@/components/StreakViewer';
 import toast from 'react-hot-toast';
+import { getDateString } from '@/utils/date';
 
 const Streak: FC = async () => {
-  const now = new Date();
-  const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-  const myStreak = await getStreakQuery(date);
+  const myStreak = await getStreakQuery(getDateString(new Date()));
   const streak = myStreak.result?.streak ?? 0;
   const bestStreak = myStreak.result?.bestStreak ?? 0;
 
@@ -26,8 +25,9 @@ const Streak: FC = async () => {
           </>
         ) : (
           <>
-            지금까지 연속 기록을 <span className="text-emerald-500">{streak}일</span> 유지 중이에요.{' '}
-            <span aria-label="불 이모지">🔥</span> <br />
+            <span aria-label="불 이모지">🔥</span> 연속 기록을 <span className="text-emerald-500">{streak}일</span> 유지
+            중이에요.
+            <br />
             <span className="text-lg">
               최장 연속 기록은 <span className="text-emerald-500">{bestStreak}일</span>이에요.
             </span>
