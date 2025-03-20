@@ -6,10 +6,6 @@ import Link from 'next/link';
 const Page: FC = () => {
   return (
     <>
-      <div className="flex h-10 w-full items-center justify-center bg-stone-800 text-center text-lg text-white hover:underline">
-        <Link href="/survey">마루에 대한 피드백을 받고 있어요</Link>
-      </div>
-
       <Jumbotron />
 
       <Container>
