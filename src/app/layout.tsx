@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#10B981'
+  themeColor: '#ffffff'
 };
 
 const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
