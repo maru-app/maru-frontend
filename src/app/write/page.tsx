@@ -65,16 +65,12 @@ const Page: FC = () => {
     <Container className="mt-12 lg:mt-20">
       <PageTitle title="일기 쓰기" description="새로운 일기를 쓸 수 있어요." />
       <div className="mt-16">
-        <div className="mb-4 flex justify-between">
-          <Input
-            placeholder="일기 제목을 입력해주세요."
-            value={title}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
-          />
-          <Button className="hidden bg-emerald-500 text-white hover:bg-emerald-600 lg:block" onClick={onSaveClick}>
-            저장하기
-          </Button>
-        </div>
+        <Input
+          placeholder="일기 제목을 입력해주세요."
+          value={title}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
+          className="mb-4"
+        />
         <Editor value={content} onChange={setContent} />
         <div className="mt-10 flex justify-end">
           <Button className="bg-emerald-500 text-white hover:bg-emerald-600" onClick={onSaveClick}>
