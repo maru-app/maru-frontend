@@ -6,8 +6,8 @@ import Link from 'next/link';
 
 const Footer: FC = () => {
   return (
-    <footer className="mt-48 h-72 border-t">
-      <Container className="flex h-full flex-col justify-center space-y-8 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
+    <footer className="mt-48 h-96 border-t">
+      <Container className="flex h-full flex-col justify-center space-y-16">
         <div>
           <h1 className="font-hahmlet text-xl font-bold">마루</h1>
           <p className="ml-[1px] text-gray-400">나만의 일기를 쓰는 공간.</p>
@@ -19,23 +19,38 @@ const Footer: FC = () => {
             가 만들어요
           </p>
         </div>
-        <div>
-          <div className="flex flex-col space-y-0.5 lg:text-right">
+        <div className="flex flex-col items-start space-y-4 lg:flex-row lg:space-x-20 lg:space-y-0">
+          <div className="flex flex-col space-y-0.5">
             <Link href="/tos" className="text-gray-400 hover:text-gray-500">
-              이용약관
+              <b>이용약관</b>
             </Link>
             <Link href="/privacy" className="text-gray-400 hover:text-gray-500">
-              개인정보 처리방침
+              <b>개인정보 처리방침</b>
             </Link>
           </div>
-          <div className="mt-4 flex lg:justify-end">
+          <div className="flex flex-col space-y-0.5">
+            <Link href="/survey" className="text-gray-400 hover:text-gray-500">
+              알려진 오류 &middot; 피드백
+            </Link>
+          </div>
+          <div className="flex flex-col space-y-0.5">
             <a
               href="https://github.com/SkyLightQP/maru-frontend"
               target="_blank"
               rel="noreferrer"
-              className="text-gray-400 transition ease-in-out hover:text-gray-500"
+              className="flex items-center text-gray-400 transition ease-in-out hover:text-gray-500"
             >
-              <FontAwesomeIcon icon={faGithub} className="size-5" />
+              <FontAwesomeIcon icon={faGithub} className="size-4" />
+              &nbsp;프론트엔드
+            </a>
+            <a
+              href="https://github.com/SkyLightQP/maru-backend"
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center text-gray-400 transition ease-in-out hover:text-gray-500"
+            >
+              <FontAwesomeIcon icon={faGithub} className="size-4" />
+              &nbsp;백엔드
             </a>
           </div>
         </div>
