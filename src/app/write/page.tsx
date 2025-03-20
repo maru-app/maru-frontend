@@ -35,7 +35,6 @@ const Page: FC = () => {
       const defaultTitle = `${new Date().getMonth() + 1}월 ${new Date().getDate()}일 일기`;
       if (title.trim() === '') {
         setTitle(defaultTitle);
-        toast('일기 제목이 비어있어 오늘 날짜로 채웠어요.', { icon: EMOJI_LIST.PENCIL });
       }
 
       await createDiaryMutation({
@@ -66,7 +65,7 @@ const Page: FC = () => {
       <PageTitle title="일기 쓰기" description="새로운 일기를 쓸 수 있어요." />
       <div className="mt-16">
         <Input
-          placeholder="일기 제목을 입력해주세요."
+          placeholder="일기 제목을 입력해주세요. 빈 칸으로 두면 오늘 날짜로 채워드릴게요."
           value={title}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
           className="mb-4"
