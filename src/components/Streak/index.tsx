@@ -2,11 +2,10 @@ import { FC } from 'react';
 import { getStreakQuery } from '@/api/query/streak-query';
 import StreakViewer from '@/components/StreakViewer';
 import toast from 'react-hot-toast';
+import { getDateString } from '@/utils/date';
 
 const Streak: FC = async () => {
-  const now = new Date();
-  const date = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
-  const myStreak = await getStreakQuery(date);
+  const myStreak = await getStreakQuery(getDateString(new Date()));
   const streak = myStreak.result?.streak ?? 0;
   const bestStreak = myStreak.result?.bestStreak ?? 0;
 
