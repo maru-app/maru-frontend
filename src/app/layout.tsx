@@ -52,6 +52,7 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
 
   return (
     <html lang="ko">
+      <Adsense />
       <body className="antialiased">
         <NextTopLoader color="#10B981" height={2} showSpinner={false} />
         <Navbar authorize={isAuthorize} />
@@ -65,7 +66,6 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
           }}
         />
       </body>
-      <Adsense />
       <GoogleAnalytics gaId="G-H5T4L44K0V" />
     </html>
   );
