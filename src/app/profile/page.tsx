@@ -16,6 +16,7 @@ import WithdrawButton from '@/components/WithdrawButton';
 
 const Page: FC = () => {
   const [myInfo, setMyInfo] = useState<GetMyInfoQueryReturn | null>(null);
+  const [isPublicRanking, setIsPublicRanking] = useState<boolean>(false);
 
   const fetchMyInfo = useCallback(() => {
     getMyInfoQuery().then((data) => {
@@ -24,6 +25,7 @@ const Page: FC = () => {
         return;
       }
       setMyInfo(data.result);
+      setIsPublicRanking(data.result.isPublicRanking);
     });
   }, []);
 
@@ -33,10 +35,10 @@ const Page: FC = () => {
 
   const onSubmit = async (formData: FormData) => {
     const nickname = formData.get('nickname');
-    const streak = formData.get('streak');
 
     await updateUserMutation({
-      nickname: String(nickname).trim() ?? myInfo?.nickname.trim()
+      nickname: String(nickname).trim() ?? myInfo?.nickname.trim(),
+      isPublicRanking
     });
 
     toast('내 정보를 변경했어요.', { icon: EMOJI_LIST.PENCIL });
@@ -79,11 +81,25 @@ const Page: FC = () => {
           <p className="mb-2 text-sm text-gray-400">연속 기록 랭킹은 추후 제공 예정이에요. 기본값은 비공개이에요.</p>
           <div className="flex space-x-4">
             <span className="space-x-2">
-              <input type="radio" name="streak" id="public" value="public" disabled />
+              <input
+                type="radio"
+                name="streak"
+                id="public"
+                value="public"
+                checked={isPublicRanking}
+                onChange={() => setIsPublicRanking(true)}
+              />
               <label htmlFor="public">공개</label>
             </span>
             <span className="space-x-2">
-              <input type="radio" name="streak" id="private" value="private" defaultChecked disabled />
+              <input
+                type="radio"
+                name="streak"
+                id="private"
+                value="private"
+                checked={!isPublicRanking}
+                onChange={() => setIsPublicRanking(false)}
+              />
               <label htmlFor="private">비공개</label>
             </span>
           </div>
