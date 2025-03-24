@@ -9,6 +9,7 @@ export interface GetMyInfoQueryReturn {
   email: string;
   nickname: string;
   vendor: Vendor;
+  isPublicRanking: boolean;
   createdAt: Date;
 }
 

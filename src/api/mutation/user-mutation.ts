@@ -6,13 +6,17 @@ import { cookies } from 'next/headers';
 
 export interface UpdateUserMutationParams {
   readonly nickname: string;
+  readonly isPublicRanking?: boolean;
 }
 
-export const updateUserMutation = async ({ nickname }: UpdateUserMutationParams): Promise<ApiResponse<void>> => {
+export const updateUserMutation = async ({
+  nickname,
+  isPublicRanking
+}: UpdateUserMutationParams): Promise<ApiResponse<void>> => {
   try {
     const response = await fetch(`${API_HOST}/user`, {
       method: 'PUT',
-      body: JSON.stringify({ nickname }),
+      body: JSON.stringify({ nickname, isPublicRanking }),
       ...(await getCommonFetchConfig())
     });
     return interceptResponse(response);
