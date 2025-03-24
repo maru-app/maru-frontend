@@ -38,3 +38,34 @@ export const getStreakQuery = async (date: string): Promise<ApiResponse<GetStrea
     return createApiFetchError();
   }
 };
+
+export interface GetStreakRankingQueryReturn {
+  readonly content: Array<{
+    readonly rank: number;
+    readonly isPublicRanking: boolean;
+    readonly nickname: string;
+    readonly streak: number;
+    readonly bestStreak: number;
+  }>;
+  readonly page: {
+    readonly size: number;
+    readonly number: number;
+    readonly totalElements: number;
+    readonly totalPages: number;
+  };
+}
+
+export const getStreakRankingQuery = async (
+  year: number,
+  size: number
+): Promise<ApiResponse<GetStreakRankingQueryReturn>> => {
+  try {
+    const response = await fetch(`${API_HOST}/streak/rank?year=${year}&page=0&size=${size}`, {
+      method: 'GET',
+      ...(await getCommonFetchConfig())
+    });
+    return interceptResponse(response);
+  } catch (error) {
+    return createApiFetchError();
+  }
+};
