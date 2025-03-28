@@ -26,7 +26,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
       <header className="fixed z-10 w-full border-b bg-white/50 backdrop-blur">
         <Container className="flex items-center justify-between py-3">
           <div className="flex">
-            <Link className="mr-16 select-none font-hahmlet text-2xl font-bold lg:text-[26px]" href="/">
+            <Link className="font-dodamdodam mr-16 mt-0 select-none text-[28px] font-bold lg:mt-1 lg:text-3xl" href="/">
               마루
             </Link>
             <div className="hidden space-x-6 lg:flex">

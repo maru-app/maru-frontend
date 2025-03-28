@@ -6,7 +6,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        hahmlet: ['Hahmlet', 'serif'],
+        dodamdodam: ['KCC-DodamdodamR', 'sans-serif'],
         pretendard: ['Pretendard Variable', 'Fluent Emoji Color', ...defaultTheme.fontFamily.sans]
       }
     }

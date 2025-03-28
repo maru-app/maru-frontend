@@ -9,7 +9,7 @@ const Footer: FC = () => {
     <footer className="mt-48 h-96 border-t">
       <Container className="flex h-full flex-col justify-center space-y-16">
         <div>
-          <h1 className="font-hahmlet text-xl font-bold">마루</h1>
+          <h1 className="font-dodamdodam text-xl font-bold">마루</h1>
           <p className="ml-[1px] text-gray-400">나만의 일기를 쓰는 공간.</p>
           <p className="ml-[1px] mt-1 text-sm text-gray-400">
             <span className="font-hahmlet">마루</span>는{' '}

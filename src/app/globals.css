@@ -7,8 +7,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'Hahmlet';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2') format('woff2');
+    font-family: 'KCC-DodamdodamR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-DodamdodamR.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
   }
