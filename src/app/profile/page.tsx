@@ -78,7 +78,6 @@ const Page: FC = () => {
 
         <div className="mt-10">
           <p className="text-lg font-bold">연속 기록 공개여부</p>
-          <p className="mb-2 text-sm text-gray-400">연속 기록 랭킹은 추후 제공 예정이에요. 기본값은 비공개이에요.</p>
           <div className="flex space-x-4">
             <span className="space-x-2">
               <input
