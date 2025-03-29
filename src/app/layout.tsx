@@ -54,7 +54,7 @@ const RootLayout: FC<PropsWithChildren> = async ({ children }) => {
     <html lang="ko">
       <Adsense />
       <body className="antialiased">
-        <NextTopLoader color="#10B981" height={2} showSpinner={false} />
+        <NextTopLoader color="#16A34A" height={2} showSpinner={false} />
         <Navbar authorize={isAuthorize} />
         <section className="pt-[65px]">{children}</section>
         <Footer />
