@@ -72,8 +72,8 @@
 .swal2-confirm {
   @apply font-normal;
   @apply outline-none;
-  @apply bg-emerald-500;
-  @apply hover:bg-emerald-600;
+  @apply bg-green-600;
+  @apply hover:bg-green-700;
   @apply transition-all duration-200 ease-in-out;
   @apply rounded-md;
 

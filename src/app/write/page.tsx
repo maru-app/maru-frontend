@@ -72,7 +72,7 @@ const Page: FC = () => {
         />
         <Editor value={content} onChange={setContent} />
         <div className="mt-10 flex justify-end">
-          <Button className="bg-emerald-500 text-white hover:bg-emerald-600" onClick={onSaveClick}>
+          <Button className="bg-green-600 text-white hover:bg-green-700" onClick={onSaveClick}>
             저장하기
           </Button>
         </div>

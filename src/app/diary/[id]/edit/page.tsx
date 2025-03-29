@@ -96,19 +96,15 @@ const Page: FC = () => {
     <Container className="mt-12 lg:mt-20">
       <PageTitle title="일기 수정" description={`${dateFormat}에 쓴 일기를 수정하고 있어요.`} />
       <div className="mt-16">
-        <div className="mb-4 flex justify-between">
-          <Input
-            placeholder="일기 제목을 입력해주세요."
-            value={title}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
-          />
-          <Button className="hidden bg-emerald-500 text-white hover:bg-emerald-600 lg:block" onClick={onEditClick}>
-            수정하기
-          </Button>
-        </div>
+        <Input
+          className="mb-4"
+          placeholder="일기 제목을 입력해주세요."
+          value={title}
+          onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
+        />
         <Editor value={content} onChange={setContent} />
         <div className="mt-10 flex justify-end">
-          <Button className="bg-emerald-500 text-white hover:bg-emerald-600" onClick={onEditClick}>
+          <Button className="bg-green-600 text-white hover:bg-green-700" onClick={onEditClick}>
             {' '}
             수정하기
           </Button>

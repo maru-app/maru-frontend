@@ -42,7 +42,7 @@ const Jumbotron: FC = async () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: 0.25 }}
-                className="mt-8 inline-block bg-emerald-500 text-white hover:bg-emerald-600"
+                className="mt-8 inline-block bg-green-600 text-white hover:bg-green-700"
                 as={Link}
                 href="/login"
               >
@@ -74,7 +74,7 @@ const Jumbotron: FC = async () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: 0.25 }}
-                className="mt-8 inline-block bg-emerald-500 text-white hover:bg-emerald-600"
+                className="mt-8 inline-block bg-green-600 text-white hover:bg-green-700"
                 as={Link}
                 href="/write"
               >
@@ -105,7 +105,7 @@ const Jumbotron: FC = async () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.4, ease: 'easeOut', delay: 0.25 }}
-                className="mt-8 inline-block bg-emerald-500 text-white hover:bg-emerald-600"
+                className="mt-8 inline-block bg-green-600 text-white hover:bg-green-700"
                 as={Link}
                 href="/diary"
               >
