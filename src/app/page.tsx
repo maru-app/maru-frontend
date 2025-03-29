@@ -1,6 +1,6 @@
 import { FC } from 'react';
-import Jumbotron from '@/components/Jumbotron';
 import Container from '@/components/Container';
+import Jumbotron from '@/components/Landing/Jumbotron';
 
 const Page: FC = () => {
   return (

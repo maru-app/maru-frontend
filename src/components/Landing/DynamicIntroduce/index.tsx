@@ -3,7 +3,7 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { MotionButton } from '@/components/MotionElement';
+import { MotionButton } from '@/components/Landing/MotionElement';
 
 interface DynamicIntroduceProps {
   readonly status: 'UNAUTHORIZED' | 'NOT_WRITE' | 'WRITE';
