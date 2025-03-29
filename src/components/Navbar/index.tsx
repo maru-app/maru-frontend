@@ -32,7 +32,14 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
             <div className="hidden space-x-6 lg:flex">
               <div className="flex space-x-4">
                 {notAuthorizeRoute.map((route) => (
-                  <Button key={route.href} variance="text" active={pathname === route.href} as={Link} href={route.href}>
+                  <Button
+                    key={route.href}
+                    variance="text"
+                    active={pathname === route.href}
+                    as={Link}
+                    href={route.href}
+                    className={pathname === route.href ? 'text-black' : 'text-gray-600'}
+                  >
                     {route.name}
                   </Button>
                 ))}
@@ -48,6 +55,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
                         active={pathname === route.href}
                         as={Link}
                         href={route.href}
+                        className={pathname === route.href ? 'text-black' : 'text-gray-600'}
                       >
                         {route.name}
                       </Button>
@@ -75,7 +83,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
             {notAuthorizeRoute.map((route) => (
               <Button
                 key={route.href}
-                className="w-full text-left"
+                className={cn('w-full text-left', pathname === route.href ? 'text-black' : 'text-gray-600')}
                 variance="text"
                 active={pathname === route.href}
                 as={Link}
@@ -89,7 +97,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
               authorizeRoute.map((route) => (
                 <Button
                   key={route.href}
-                  className="w-full text-left"
+                  className={cn('w-full text-left', pathname === route.href ? 'text-black' : 'text-gray-600')}
                   variance="text"
                   active={pathname === route.href}
                   as={Link}
@@ -100,7 +108,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
                 </Button>
               ))}
             <Button
-              className="w-full text-left"
+              className="w-full text-left text-gray-600"
               variance="text"
               as={Link}
               href={authorize ? '/write' : '/login'}
