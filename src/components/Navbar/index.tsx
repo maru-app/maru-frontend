@@ -26,13 +26,20 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
       <header className="fixed z-10 w-full border-b bg-white/50 backdrop-blur">
         <Container className="flex items-center justify-between py-3">
           <div className="flex">
-            <Link className="mr-16 select-none font-hahmlet text-2xl font-bold lg:text-[26px]" href="/">
+            <Link className="mr-16 mt-0 select-none font-dodamdodam text-[28px] font-bold lg:mt-1 lg:text-3xl" href="/">
               마루
             </Link>
             <div className="hidden space-x-6 lg:flex">
               <div className="flex space-x-4">
                 {notAuthorizeRoute.map((route) => (
-                  <Button key={route.href} variance="text" active={pathname === route.href} as={Link} href={route.href}>
+                  <Button
+                    key={route.href}
+                    variance="text"
+                    active={pathname === route.href}
+                    as={Link}
+                    href={route.href}
+                    className={pathname === route.href ? 'text-black' : 'text-gray-600'}
+                  >
                     {route.name}
                   </Button>
                 ))}
@@ -48,6 +55,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
                         active={pathname === route.href}
                         as={Link}
                         href={route.href}
+                        className={pathname === route.href ? 'text-black' : 'text-gray-600'}
                       >
                         {route.name}
                       </Button>
@@ -59,7 +67,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
           </div>
 
           <Button
-            className="hidden bg-emerald-500 text-sm font-bold text-white hover:bg-emerald-600 lg:block"
+            className="hidden bg-green-600 text-sm font-bold text-white hover:bg-green-700 lg:block"
             as={Link}
             href={authorize ? '/write' : '/login'}
           >
@@ -75,7 +83,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
             {notAuthorizeRoute.map((route) => (
               <Button
                 key={route.href}
-                className="w-full text-left"
+                className={cn('w-full text-left', pathname === route.href ? 'text-black' : 'text-gray-600')}
                 variance="text"
                 active={pathname === route.href}
                 as={Link}
@@ -89,7 +97,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
               authorizeRoute.map((route) => (
                 <Button
                   key={route.href}
-                  className="w-full text-left"
+                  className={cn('w-full text-left', pathname === route.href ? 'text-black' : 'text-gray-600')}
                   variance="text"
                   active={pathname === route.href}
                   as={Link}
@@ -100,7 +108,7 @@ const Navbar: FC<NavbarProps> = ({ authorize }) => {
                 </Button>
               ))}
             <Button
-              className="w-full text-left"
+              className="w-full text-left text-gray-600"
               variance="text"
               as={Link}
               href={authorize ? '/write' : '/login'}

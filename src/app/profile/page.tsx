@@ -107,7 +107,7 @@ const Page: FC = () => {
         <div className="mt-10 flex justify-end space-x-2">
           <LogoutButton />
           <WithdrawButton />
-          <Button type="submit" className="bg-emerald-500 text-white hover:bg-emerald-600">
+          <Button type="submit" className="bg-green-600 text-white hover:bg-green-700">
             저장
           </Button>
         </div>

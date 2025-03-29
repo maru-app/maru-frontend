@@ -67,7 +67,7 @@ const StreakGraph: FC<StreakGraphProps> = ({ year, streaks }) => {
                 key={`streak-date-${idx}`}
                 className={cn(
                   'ml-0.5 mt-0.5 h-4 w-4 rounded-md bg-gray-300',
-                  count >= 1 ? 'bg-emerald-500/70' : 'bg-gray-300/70'
+                  count >= 1 ? 'bg-green-600/70' : 'bg-gray-300/70'
                 )}
               />
             );

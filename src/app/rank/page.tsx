@@ -53,7 +53,7 @@ const Page: FC = () => {
               <tr key={`rank-${rank.rank}-${rank.nickname}`} className="border-b border-gray-200 text-left">
                 <td className={cn('w-1/6 py-3', rankStyleMap[rank.rank] ?? 'text-black')}>{rank.rank}</td>
                 <td className="w-1/4 py-3">{rank.nickname === '' ? '비공개' : rank.nickname}</td>
-                <td className={cn('w-1/4 py-3', rank.rank === 1 && 'text-emerald-500')}>{rank.streak}일</td>
+                <td className={cn('w-1/4 py-3', rank.rank === 1 && 'text-green-600')}>{rank.streak}일</td>
               </tr>
             ))}
         </tbody>

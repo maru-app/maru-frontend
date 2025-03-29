@@ -7,8 +7,8 @@
 
 @layer base {
   @font-face {
-    font-family: 'Hahmlet';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2') format('woff2');
+    font-family: 'KCC-DodamdodamR';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/KCC-DodamdodamR.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
   }
@@ -72,8 +72,8 @@
 .swal2-confirm {
   @apply font-normal;
   @apply outline-none;
-  @apply bg-emerald-500;
-  @apply hover:bg-emerald-600;
+  @apply bg-green-600;
+  @apply hover:bg-green-700;
   @apply transition-all duration-200 ease-in-out;
   @apply rounded-md;
 

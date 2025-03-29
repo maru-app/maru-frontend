@@ -32,7 +32,7 @@ const RegisterPage: FC = () => {
           <Input name="nickname" placeholder="마루에서 사용할 닉네임을 정해주세요." />
         </div>
         <div className="mt-10 flex justify-end">
-          <Button type="submit" className="bg-emerald-500 px-5 text-white hover:bg-emerald-600">
+          <Button type="submit" className="bg-green-600 text-white hover:bg-green-700">
             회원가입
           </Button>
         </div>
