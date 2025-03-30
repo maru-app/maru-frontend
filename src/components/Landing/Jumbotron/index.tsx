@@ -6,6 +6,7 @@ import { MotionH1 } from '../MotionElement';
 import LandingBanner from '@/assets/images/landing-banner.png';
 import Image from 'next/image';
 import DynamicIntroduce from '@/components/Landing/DynamicIntroduce';
+import { ArrowDownIcon } from '@heroicons/react/24/solid';
 
 const Jumbotron: FC = async () => {
   const allStreak = await getAllStreakQuery(new Date().getFullYear());
@@ -14,7 +15,7 @@ const Jumbotron: FC = async () => {
   const textStatus = error ? 'UNAUTHORIZED' : todayStreak ? 'WRITE' : 'NOT_WRITE';
 
   return (
-    <section className="relative h-[38rem]">
+    <section className="relative h-[calc(100vh-66px)] lg:h-[38rem]">
       <div className="absolute left-0 top-0 -z-10 h-full w-full">
         <Image
           src={LandingBanner}
@@ -34,6 +35,9 @@ const Jumbotron: FC = async () => {
             나만의 일기를 쓰는 공간 <span className="font-dodamdodam text-4xl">마루</span>
           </MotionH1>
           <DynamicIntroduce status={textStatus} />
+        </div>
+        <div className="absolute bottom-8 block animate-bounce lg:hidden">
+          <ArrowDownIcon className="size-6 text-gray-500/70" />
         </div>
       </Container>
     </section>
