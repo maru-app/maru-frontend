@@ -65,13 +65,14 @@ const Page: FC = () => {
       <PageTitle title="일기 쓰기" description="새로운 일기를 쓸 수 있어요." />
       <div className="mt-16">
         <Input
-          placeholder="일기 제목을 입력해주세요. 빈 칸으로 두면 오늘 날짜로 채워드릴게요."
+          placeholder="제목을 빈 칸으로 두면 오늘 날짜로 채워드릴게요."
           value={title}
           onChange={(e: ChangeEvent<HTMLInputElement>) => setTitle(e.target.value)}
           className="mb-4"
         />
         <Editor value={content} onChange={setContent} />
-        <div className="mt-10 flex justify-end">
+        <div className="mt-10 flex items-center justify-end">
+          <p className="mr-4 text-sm text-gray-500">{content.length}/500</p>
           <Button className="bg-green-600 text-white hover:bg-green-700" onClick={onSaveClick}>
             저장하기
           </Button>
