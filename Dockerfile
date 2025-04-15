@@ -1,4 +1,4 @@
-FROM node:22-alpine AS base
+FROM arm64v8/node:22-alpine AS base
 
 # Step 1. Rebuild the source code only when needed
 FROM base AS builder
@@ -43,7 +43,7 @@ RUN \
 # Note: It is not necessary to add an intermediate step that does a full copy of `node_modules` here
 
 # Step 2. Production image, copy all the files and run next
-FROM --platform=linux/arm64 node:22-alpine AS runner
+FROM --platform=linux/arm64 base AS runner
 
 WORKDIR /app
 
