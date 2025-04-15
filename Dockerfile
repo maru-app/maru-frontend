@@ -43,7 +43,7 @@ RUN \
 # Note: It is not necessary to add an intermediate step that does a full copy of `node_modules` here
 
 # Step 2. Production image, copy all the files and run next
-FROM base AS runner
+FROM --platform=linux/arm64 base AS runner
 
 WORKDIR /app
 
