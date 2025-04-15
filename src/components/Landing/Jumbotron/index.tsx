@@ -30,9 +30,9 @@ const Jumbotron: FC = async () => {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.35, ease: 'easeOut' }}
-            className="mb-2 text-3xl font-bold"
+            className="mb-3 text-2xl font-bold lg:text-3xl"
           >
-            나만의 일기를 쓰는 공간 <span className="font-dodamdodam text-4xl">마루</span>
+            나만의 일기를 쓰는 공간 마루
           </MotionH1>
           <DynamicIntroduce status={textStatus} />
         </div>
