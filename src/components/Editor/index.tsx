@@ -69,11 +69,10 @@ const Editor: FC<EditorProps> = ({ value, onChange }) => {
     () => ({
       toolbar: {
         container: [
-          [{ header: '1' }, { header: '2' }, { header: '3' }],
           ['bold', 'italic', 'underline', 'strike'],
           [{ color: [] }, { background: [] }],
           [{ align: [] }],
-          ['link', 'image'],
+          ['image'],
           ['clean']
         ],
         handlers: {
