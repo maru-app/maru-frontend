@@ -13,6 +13,7 @@ import { EMOJI_LIST } from '@/constants/emoji';
 import { editorPreprocessor } from '@/utils/diary-preprocessor';
 import { DiaryWriteDataForm } from '@/app/write/type';
 import EmojiPicker from '@/components/EmojiPicker';
+import { DIARY_MAX_LENGTH, EMOJI_MAX_LENGTH } from '@/constants/diary-validation';
 
 const Page: FC = () => {
   const router = useRouter();
@@ -27,6 +28,14 @@ const Page: FC = () => {
   const validateInput = () => {
     if (writeData.content.trim() === '') {
       toast('일기 내용이 비어있어요.', { icon: EMOJI_LIST.PENCIL });
+      return false;
+    }
+    if (writeData.content.length > DIARY_MAX_LENGTH) {
+      toast(`일기 내용을 ${DIARY_MAX_LENGTH}자 이하로 줄여주세요.`, { icon: EMOJI_LIST.PENCIL });
+      return false;
+    }
+    if (writeData.emoji.length > EMOJI_MAX_LENGTH) {
+      toast('이모지 외 다른 글자가 들어있어요.', { icon: EMOJI_LIST.PENCIL });
       return false;
     }
 
@@ -46,7 +55,8 @@ const Page: FC = () => {
 
       await createDiaryMutation({
         title: writeData.title.trim() === '' ? defaultTitle : writeData.title,
-        content: await editorPreprocessor(writeData.content)
+        content: await editorPreprocessor(writeData.content),
+        emoji: writeData.emoji
       });
       toast('새로운 일기를 작성했어요!', { icon: EMOJI_LIST.GREEN_BOOK });
       router.push('/diary');
@@ -103,7 +113,9 @@ const Page: FC = () => {
         <Editor value={writeData.content} onChange={(v) => setWriteData((prev) => ({ ...prev, content: v }))} />
 
         <div className="mt-10 flex items-center justify-end">
-          <p className="mr-4 text-sm text-gray-500">{writeData.content.length}/500</p>
+          <p className="mr-4 text-sm text-gray-500">
+            {writeData.content.length}/{DIARY_MAX_LENGTH}
+          </p>
           <Button className="bg-green-600 text-white hover:bg-green-700" onClick={onSaveClick}>
             저장하기
           </Button>
