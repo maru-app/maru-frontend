@@ -34,6 +34,7 @@ export interface GetDiaryQueryReturn {
   readonly diaryId: number;
   readonly title: string;
   readonly content: string;
+  readonly emoji: string;
   readonly createdAt: Date;
   readonly updatedAt: Date;
 }
