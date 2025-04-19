@@ -7,6 +7,7 @@ export interface GetAllDiaryQueryReturn {
   readonly content: Array<{
     readonly diaryId: number;
     readonly title: string;
+    readonly emoji: string;
     readonly createdAt: Date;
     readonly updatedAt: Date;
   }>;
