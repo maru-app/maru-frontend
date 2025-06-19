@@ -30,27 +30,17 @@ const Footer: FC = () => {
           </div>
           <div className="flex flex-col space-y-0.5">
             <Link href="/survey" className="text-gray-400 hover:text-gray-500">
-              알려진 오류 &middot; 피드백
+              알려진 오류
             </Link>
           </div>
           <div className="flex flex-col space-y-0.5">
             <a
-              href="https://github.com/SkyLightQP/maru-frontend"
+              href="https://github.com/maru-app/"
               target="_blank"
               rel="noreferrer"
               className="flex items-center text-gray-400 transition ease-in-out hover:text-gray-500"
             >
               <FontAwesomeIcon icon={faGithub} className="size-4" />
-              &nbsp;프론트엔드
-            </a>
-            <a
-              href="https://github.com/SkyLightQP/maru-backend"
-              target="_blank"
-              rel="noreferrer"
-              className="flex items-center text-gray-400 transition ease-in-out hover:text-gray-500"
-            >
-              <FontAwesomeIcon icon={faGithub} className="size-4" />
-              &nbsp;백엔드
             </a>
           </div>
         </div>

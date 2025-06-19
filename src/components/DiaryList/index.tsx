@@ -33,7 +33,12 @@ export const DiaryList: FC = () => {
         )}
         {diaryData.content.length > 0 &&
           diaryData.content.map((diary) => (
-            <MyDiaryCard id={diary.diaryId} title={diary.title} date={new Date(diary.createdAt)} key={diary.diaryId} />
+            <MyDiaryCard
+              id={diary.diaryId}
+              title={`${diary.emoji} ${diary.title}`}
+              date={new Date(diary.createdAt)}
+              key={diary.diaryId}
+            />
           ))}
       </div>
       {diaryData.page.number + 1 < diaryData.page.totalPages && (

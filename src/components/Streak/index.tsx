@@ -15,7 +15,7 @@ const Streak: FC = async () => {
 
   return (
     <div className="mt-2 w-full rounded-md border border-gray-200 p-4">
-      <h3 className="mb-4 text-xl font-bold">
+      <h3 className="mb-4 text-xl font-bold leading-6">
         {streak === 0 ? (
           <>
             오늘은 아직 일기를 쓰지 않았어요. <br />
@@ -25,10 +25,9 @@ const Streak: FC = async () => {
           </>
         ) : (
           <>
-            <span aria-label="불 이모지">🔥</span> 연속 기록을 <span className="text-green-600">{streak}일</span> 유지
-            중이에요.
+            연속 기록을 <span className="text-green-600">{streak}일</span> 유지 중이에요.
             <br />
-            <span className="text-lg">
+            <span className="text-base">
               최장 연속 기록은 <span className="text-green-600">{bestStreak}일</span>이에요.
             </span>
           </>

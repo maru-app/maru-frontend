@@ -47,7 +47,7 @@ const Page: FC<{ params: Promise<{ id: string }> }> = async ({ params }) => {
     <Container className="mt-12 lg:mt-20">
       <div className="flex flex-col space-y-4 lg:flex-row lg:items-center lg:justify-between lg:space-y-0">
         <PageTitle
-          title={diary.result.title}
+          title={`${diary.result.emoji} ${diary.result.title}`}
           description={`${diaryDate.getFullYear()}년 ${diaryDate.getMonth() + 1}월 ${diaryDate.getDate()}일`}
         />
         <div className="flex flex-shrink-0 space-x-2">

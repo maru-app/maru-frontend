@@ -7,7 +7,7 @@ export default {
     extend: {
       fontFamily: {
         dodamdodam: ['KCC-DodamdodamR', 'sans-serif'],
-        pretendard: ['Pretendard Variable', 'Fluent Emoji Color', ...defaultTheme.fontFamily.sans]
+        pretendard: ['Pretendard Variable', 'Fluent Emoji Flat', ...defaultTheme.fontFamily.sans]
       }
     }
   },
