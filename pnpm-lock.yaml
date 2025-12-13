@@ -42,7 +42,7 @@ importers:
         specifier: ^3.7.15
         version: 3.7.15(next@15.2.8(@babel/core@7.26.7)(react-dom@19.0.0(react@19.0.1))(react@19.0.1))(react-dom@19.0.0(react@19.0.1))(react@19.0.1)
       notion-client:
-        specifier: ^7.7.1
+        specifier: ^7.1.6
         version: 7.7.1
       notion-types:
         specifier: ^7.1.6

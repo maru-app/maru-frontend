@@ -20,7 +20,7 @@
     "framer-motion": "^12.0.5",
     "next": "15.2.8",
     "nextjs-toploader": "^3.7.15",
-    "notion-client": "^7.7.1",
+    "notion-client": "^7.1.6",
     "notion-types": "^7.1.6",
     "react": "19.0.1",
     "react-dom": "^19.0.0",
