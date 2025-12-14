@@ -1,4 +1,4 @@
-FROM node:24-alpine AS base
+FROM --platform=linux/arm64 node:24-alpine AS base
 
 # Step 1. Rebuild the source code only when needed
 FROM base AS builder
